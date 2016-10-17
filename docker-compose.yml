@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
+            - ./open-lims:/var/www/open-lims
+        links:
+            - php-fpm
+    php-fpm:
+        image: salmander/php-5.3
+        links:
+         - db
+        environment:
+         - DB_USER=web
+         - DB_NAME=web
+         - DB_PASSWORD=password
+        ports:
+         - "9000:9000"
+        working_dir: /var/www/open-lims
+        volumes:
+         - ./open-lims:/var/www/open-lims
+    db:
+        image: postgres:latest
+        environment:
+         - POSTGRES_USER=web
+         - POSTGRES_PASSWORD=password
+         - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+         - "5432:5432"
+        volumes:
+         - ./docker/db/postgresql-data-dir:/var/lib/postgresql/data/pgdata
