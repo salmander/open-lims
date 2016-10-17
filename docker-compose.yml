@@ -11,7 +11,7 @@ services:
         links:
             - php-fpm
     php-fpm:
-        image: salmander/php-5.3
+        image: salmander/docker-php-5.3
         links:
          - db
         environment:
