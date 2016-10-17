@@ -25,12 +25,12 @@
  * 
  */
 $server['main_folder']							= "/var/www/open-lims";
-$server['timezone']								= "Europe/Berlin";
+$server['timezone']								= "Europe/London";
 
 $database['type'] 								= "postgres";
-$database['database'] 							= $_ENV["DB_NAME"];
-$database['user'] 								= $_ENV["DB_USER"];
-$database['password']							= $_ENV["DB_PASSWORD"];
+$database['database'] 							= $_ENV['DB_NAME'];
+$database['user'] 								= $_ENV['DB_USER'];
+$database['password']							= $_ENV['DB_PASSWORD'];
 
 // Primary Database Server
 $database[0]['server']							= "db";

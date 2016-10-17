@@ -26,4 +26,5 @@
  */
 $hosts = array();
 $hosts[] = "127.0.0.1";
+$hosts[] = $_SERVER["REMOTE_ADDR"];
 ?>
