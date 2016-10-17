@@ -1,0 +1,932 @@
+html,body
+{
+	height:100%;
+	margin: 0;
+	padding: 0;
+	background-color: #f3f3f3;
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color: #444444;
+}
+#Main
+{
+	height: 100%;
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	padding: 0;
+	background-image: url("../../images/shades/shade.png");
+	background-position: center top;
+	background-repeat: repeat-y;
+	min-height: 100%;
+	height: auto !important;
+}
+
+#Footer
+{
+	background-color: white;
+	position: absolute;
+	bottom: 0;
+	width: 980px;
+	display: none;
+}
+
+#Container
+{
+	background-color: white;
+	margin: 0 auto;
+	padding: 0;
+	width: 968px;
+}
+#ContainerClear
+{
+	clear: both;
+}
+
+#Header
+{
+	margin: 0;
+	padding: 0;
+}
+#HeaderLogo
+{
+	margin: 0;
+	padding: 25px 0 22px 25px;
+	float: left;	
+}
+#HeaderRight
+{
+	margin: 5px 15px 0 0;
+	float: right;	
+}
+#HeaderMenu
+{
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+#HeaderMenu li
+{
+	padding: 0 2px;
+	list-style: none;
+	float: left;
+}
+#HeaderMenu li a
+{
+	text-decoration: none;
+	color: #404040;	
+}
+#HeaderMenu li a:hover
+{
+	color: #33577d;
+	text-decoration: underline;
+}
+#HeaderSearch
+{
+	clear: both;
+	float: right;
+}
+#HeaderSearch input
+{
+	display: block;
+	float: left;
+	background-image: url('../images/search_input.png');
+	background-repeat:no-repeat;
+	background-position: top right;
+    margin: 28px 0 0 0;
+    padding: 3px 3px 6px 10px;
+    width: 152px;
+    height: 18px;
+    border: 0;
+}
+#HeaderSearch button
+{
+	background-image: url('../images/search_button.png');
+	background-repeat:no-repeat;
+	background-position: top right;
+	margin: 28px 0 0 0;
+	height: 24px;
+	width: 26px;
+	border: 0;
+	cursor: pointer;
+}
+#HeaderSearch button:hover
+{
+	background-image: url('../images/search_button_hover.png');
+	background-repeat:no-repeat;
+	background-position: top right;
+}
+#HeaderClear
+{
+	clear:both;
+	height: 1px;
+}
+
+
+/* Content */
+#Content
+{
+	width: 750px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	float: right;
+}
+#Content a {
+	color: #33577d;
+}
+
+#Content a:hover,#Content a:focus,#Content a:active {
+	color: red;
+}
+
+
+/* TOOLTIP */
+
+#BaseTooltip
+{
+	position:absolute;
+	background-color:white;
+	border: solid black 1px;
+	padding: 2px 4px 2px 4px;
+	font-family: arial;
+	font-size: 12px;
+	z-index: 1000;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+
+#BaseTopBar
+{
+	padding: 5px;
+}
+#BaseTopBarLeft
+{
+	float: left;
+}
+#BaseTopBarRight
+{
+	text-align: right;
+	float: right;
+}
+#BaseTopBarClear
+{
+	padding-top: 5px;
+	margin-bottom: 2px;
+	border-bottom: 1px #A0A0A0 dotted;
+	clear: left;
+}
+
+
+/* BASE TREE NAVIGATION */
+.BaseTreeList
+{
+	list-style-type: none;
+	margin: 0 0 0 10px;
+	padding: 0px;
+}
+.BaseTreeEntry 
+{
+	/* table-layout:fixed; */
+	border-collapse: collapse;
+}
+.BaseTreeEntry td
+{
+	height:19px;
+}
+.BaseTreeEntry img
+{
+	border: 0;
+}
+.BaseTreeEntry a
+{
+	text-decoration: none;
+	color: black;
+}
+.BaseTreeEntry a:hover
+{
+	text-decoration: underline;
+}
+.BaseTreeEntry a:focus
+{
+	outline: none;
+}
+
+/* LEFT NAVIGATION MENU */
+#LeftNavigationTree
+{
+	padding-top:2px;
+}
+
+#LeftNavigationTree img
+{
+	min-height:1%;
+}
+
+#LeftNavigation
+{
+	margin-top: 5px;
+	width: 190px;
+	float: left;
+	font-family: arial;
+	font-size: 11px;
+}
+
+#LeftNavigationSymbolArea div
+{
+	float: left;
+	height:24px;
+	width:24px;
+	margin: 2px 2px 0 2px;
+}
+
+#LeftNavigationSymbolArea div img
+{
+	margin: 4px 4px 4px 4px;
+}
+
+#LeftNavigationSymbolAreaClear
+{
+	clear: left;
+	border-top: 1px #D0D0D0 dotted;
+}
+
+#LeftNavigationTitle
+{
+	border-bottom: 1px #D0D0D0 dotted;
+	font-weight: bold;
+	padding: 2px 2px 2px 5px;
+}
+
+/* Small Tabs */
+#SmallTabContainer 
+{
+	width: 750px;
+}
+#SmallTabContainer a,
+#SmallTabContainer a:hover,
+#SmallTabContainer a:active,
+#SmallTabContainer a:focus
+{
+	color: #555555;
+}
+#SmallTabArrowLeft,
+#SmallTabArrowRight
+{
+	width: 20px;
+	position: absolute;
+}
+#SmallTabFooter 
+{
+	clear: both;
+	margin: -1px;
+	height: 1px;
+	width: 750px;
+}
+#SmallTabCamera
+{
+	height: 26px;
+}
+#SmallTabHiddenTabsMenu
+{
+	position: absolute;
+	background-color: white;
+	border: solid black 1px;
+	font-family: arial;
+	font-size: 12px;
+	z-index: 200;
+    -moz-border-radius: 10px;
+   	-webkit-border-radius: 10px;
+   	-khtml-border-radius: 10px;
+   	border-radius: 10px;
+   	padding: 5px 5px 5px 5px;
+   	border: solid #E0E0E0 1px;
+   	-moz-box-shadow: 3px 3px 5px #636363;
+  	-webkit-box-shadow: 3px 3px 5px #636363;
+ 	box-shadow: 3px 3px 5px #636363;
+}
+.SmallTabHiddenTabsMenuEntry
+{
+	font-weight: bold;
+	font-size: 14px;
+	padding: 3px 3px 3px 3px;
+	-moz-border-radius: 5px;
+   	-webkit-border-radius: 5px;
+   	-khtml-border-radius: 5px;
+   	border-radius: 5px;
+   	color: #666666;
+   	white-space: nowrap;
+}
+.SmallTabHiddenTabsMenuEntry:hover
+{
+	color: #ffffff;
+	background-color: #999;
+}
+.SmallTabList 
+{
+	position: relative;
+	width: 750px;
+	padding: 0;
+	margin: 0;
+}
+.SmallTabList li 
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+.SmallTabList li a.SmallTab 
+{
+	background-color: #E0E0E0;
+	display: block;
+	font: normal 12px Verdana, Tahoma, Helvatica, sans-serif;
+	float: left;
+	text-decoration: none;
+	text-shadow: 0 1px #FFFFFF;
+	color: #555555;
+	margin: 0;
+}
+.SmallTabList li .SmallTabLeft,
+.SmallTabList li .SmallTabRight
+{
+	display: block;
+	float: left;
+	width: 10px;
+	height: 26px;
+}
+.SmallTabList li .SmallTabContent
+{
+	display: block;
+	float: left;
+	padding: 5px 5px 0px 5px;
+	height: 21px;
+}
+	
+.SmallTabList li a.SmallTab .SmallTabLeft
+{
+	background-image: url('../images/tabs/small_tab_left.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+.SmallTabList li a.SmallTab .SmallTabContent
+{
+	background-image: url('../images/tabs/small_tab.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+.SmallTabList li a.SmallTab .SmallTabRight
+{
+	background-image: url('../images/tabs/small_tab_right.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+.SmallTabList li a.SmallTabActive .SmallTabLeft,
+.SmallTabList li a.SmallTab:hover .SmallTabLeft,
+.SmallTabList li a.SmallTab:active .SmallTabLeft,
+.SmallTabList li a.SmallTab:focus .SmallTabLeft
+{
+	background-image: url('../images/tabs/small_tab_left_active.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+.SmallTabList li a.SmallTabActive .SmallTabContent,
+.SmallTabList li a.SmallTab:hover .SmallTabContent,
+.SmallTabList li a.SmallTab:active .SmallTabContent,
+.SmallTabList li a.SmallTab:focus .SmallTabContent
+{
+	background-image: url('../images/tabs/small_tab_active.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+.SmallTabList li a.SmallTabActive .SmallTabRight,
+.SmallTabList li a.SmallTab:hover .SmallTabRight,
+.SmallTabList li a.SmallTab:active .SmallTabRight,
+.SmallTabList li a.SmallTab:focus .SmallTabRight
+{
+	background-image: url('../images/tabs/small_tab_right_active.png');
+	background-repeat:repeat-x;
+	background-position: top center;
+}
+
+
+#AddPaperSizeDialogGeneral
+{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.AddPaperSizeDialogGeneralFieldTitle
+{
+	width: 100px;
+	float: left;
+	clear: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.AddPaperSizeDialogGeneralField
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#AddPaperSizeDialogMargin
+{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	padding-top: 5px;
+	border-top: 1px #D0D0D0 solid;
+}
+#AddPaperSizeDialogMarginTitle,
+#AddPaperSizeDialogGeneralTitle
+{
+	clear: left;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#AddPaperSizeDialogMarginTop
+{
+	text-align: center;
+}
+#AddPaperSizeDialogMarginLeft
+{
+	float: left;
+	text-align: center;
+	padding-top: 55px;
+}
+#AddPaperSizeDialogMarginImage
+{
+	float: left;
+	text-align: center;
+}
+#AddPaperSizeDialogMarginRight
+{
+	text-align: center;
+	padding-top: 55px;
+}
+#AddPaperSizeDialogMarginBottom
+{
+	clear: left;
+	text-align: center;
+}
+
+#BaseLogoutQuestion
+{
+	font: normal 12px Arial, Helvetica, sans-serif;	
+	padding: 10px;
+	margin: 15px;
+	text-align: center;
+}
+
+
+/* Forms */
+
+
+
+/* Content Rounded Box */
+.ContentContainer
+{
+	border: 1px #E0E0E0 solid;
+	margin: 0;
+	padding: 0;
+	box-shadow: 3px 3px 5px #636363;
+}
+.ContentContainerHeadline
+{
+	background-color: #E0E0E0;
+	margin: 0;
+	padding: 7px;
+	font-size: 14px;
+	font-weight: bold;
+	text-shadow: 0 1px #FFFFFF;
+	color: #555555;
+}
+.ContentContainerContent
+{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* Home */
+#HomeWelcome
+{
+	font: bold 14px Arial, Helvetica, sans-serif;
+	color: #666666;
+	float: left;
+}
+#HomeDate
+{
+	font: bold 14px Arial, Helvetica, sans-serif;
+	color: #666666;
+	float: right;
+}
+#HomeSummary
+{
+	width: 100%;
+	margin-bottom: 15px;
+}
+#HomeSummaryLeft
+{
+	float: left;
+	width: 355px;
+	padding: 0 5px;
+}
+#HomeSummaryLeft table tr td
+{
+	padding: 3px 0;
+}
+#HomeSummaryRight
+{
+	float: right;
+	width: 355px;
+	padding: 0 5px;
+}
+#HomeSummaryRight table tr td
+{
+	padding: 3px 0;
+}
+#HomeSummaryClear
+{
+	clear: both;
+}
+#HomeLeft
+{
+	float: left;
+	width: 355px;
+	padding: 0;
+}
+#HomeLeft div.ContentBoxMain
+{
+	min-height: 350px;
+}
+#HomeRight
+{
+	float: right;
+	width: 355px;
+}
+#HomeRight div.ContentBoxMain
+{
+	min-height: 350px;
+}
+.HomeTodayArea
+{
+	width: 98%;
+	padding: 0 3px;
+	border-bottom: 1px #D0D0D0 dotted;
+}
+.HomeTodayHeadline
+{
+	margin: 3px 0;
+	font-size: 10px;
+}
+.HomeTodayEntry
+{
+	
+}
+.HomeTodayOverdueEntry
+{
+	color: red;
+}
+
+.Assistant
+{
+	width: 730px;
+	padding: 5px 10px 5px 10px;
+}
+.AssistantElement a
+{
+	display: block;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+}
+.AssistantElementImage
+{
+	display: block;
+	padding: 2px;
+}
+.AssistantElementText
+{
+	display: block;
+	font: bold 10px Verdana, Tahoma, Helvetica, sans-serif;
+	color: #505050;
+}
+.AssistantClear
+{
+	clear: left;
+	width: 750px;
+	border-bottom: 1px #D0D0D0 dotted;
+	height: 4px;
+}
+#AssistantLoading
+{
+	text-align: center;	
+}
+
+
+.Button,
+.ButtonDisabled,
+.Form button,
+.ListButton,
+.ListButtonDisabled
+{
+	display: block;
+	cursor: pointer;
+
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(206,206,206,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(206,206,206,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(206,206,206,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(206,206,206,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(206,206,206,1) 100%); 
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(206,206,206,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cecece',GradientType=0 );
+    
+    color: #333333 !important;
+    font: bold 13px Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 1px #FFFFFF;
+    line-height: 15px;
+    
+    border: 1px #B7B7B7 solid;
+    border-radius: 6px 6px 6px 6px;
+    border-width: 1px;
+    box-shadow: 0 0 0.1em 1px rgba(255, 255, 255, 0.867) inset;
+
+    overflow: visible;
+    text-decoration: none;
+}
+.Button:hover,
+.ButtonDisabled:hover,
+.Form button:hover,
+.ListButton:hover,
+.ListButtonDisabled:hover
+{
+	background: rgb(235,235,235);
+	background: -moz-linear-gradient(top,  rgba(235,235,235,1) 0%, rgba(170,170,170,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,235,235,1)), color-stop(100%,rgba(170,170,170,1)));
+	background: -webkit-linear-gradient(top,  rgba(235,235,235,1) 0%,rgba(170,170,170,1) 100%); 
+	background: -o-linear-gradient(top,  rgba(235,235,235,1) 0%,rgba(170,170,170,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(235,235,235,1) 0%,rgba(170,170,170,1) 100%);
+	background: linear-gradient(to bottom,  rgba(235,235,235,1) 0%,rgba(170,170,170,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#aaaaaa',GradientType=0 );
+	
+	color: #222222 !important;
+	text-shadow: 0 1px 1px #EEEEEE;
+	box-shadow: 0 0 0.1em 1px rgba(255, 255, 255, 0.3) inset;
+}
+.ButtonDisabled,
+.Form button:disabled,
+.Form button[disabled=disabled],
+.ListButtonDisabled
+{
+	color: #888888 !important;	
+}
+.Button,
+.ButtonDisabled
+{
+	margin: 0 2px;
+    padding: 4px 12px;
+}
+.Form button
+{
+	margin: 0 2px;
+    padding: 4px 12px;
+    float: left;
+}	
+.ListButton
+{
+    margin: 0 5px 0 0;
+    padding: 3px 3px;
+    float: left;
+}
+.ListButton img
+{
+	border: 0;
+	margin: 0;
+	float: left;
+	padding: 1px;
+}
+.ListButton div
+{
+	display: block;
+	float: left;
+	padding: 2px 2px 0 2px;
+}
+.ListButton div img
+{
+	display: block;
+	float: left;
+	padding: 4px 0px 4px 2px;
+}
+
+.BaseBlockUIProceed
+{
+	margin: 10px;
+	font: normal 12px Verdana, Helvetica, sans-serif;
+}
+.BaseWantToButton
+{
+	display: block;
+	clear: left;
+	min-height: 30px;
+	text-decoration: none;
+	padding: 5px 5px;
+	margin: 0;
+	border-bottom: 1px #D0D0D0 dotted;
+}
+.BaseWantToButton:hover
+{
+	background-color: #336699;
+	text-decoration: none;
+}
+.BaseWantToButton:hover .BaseWantToText
+{
+	color: #F0F0F0;
+}
+.BaseWantToIcon
+{
+	display: block;
+	float: left;
+	width: 35px;
+	padding: 0 5px 0 0;
+	margin: 0;
+}
+.BaseWantToText
+{
+	display: block;
+	vertical-align: middle;
+	margin-left: 45px;
+	font: bold 14px Arial, Helvetica, sans-serif;
+	color: #666666;
+	text-decoration: none;
+	padding: 6px 0;
+	margin: 0;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.BaseWantToHeadline
+{
+	color: #0F0F0F;
+	font: normal 10px Verdana, Helvetica, sans-serif;
+}
+.BaseWantToLine
+{
+	margin: 0 0 2px 0;
+	padding: 2px 0 0 0;
+	height: 1px;
+	border-bottom: 1px #C0C0C0 dotted;
+	font-size: 10px;
+	clear: both;
+}
+
+.BasePlaseWaitWindow
+{
+	text-align: center;	
+}
+.BasePlaseWaitWindow div
+{
+	margin: 30px;
+}
+
+
+.BaseArrowMessage
+{
+	font: normal 14px Arial, Helvetica, sans-serif;
+	background-color: #EFF5FF;
+	padding: 8px;
+	border-radius: 6px 6px 6px 6px;
+	border: 2px #D0D0D0 solid;
+	margin-left: 9px;
+	z-index: 99;
+	color: #444444;
+	text-shadow: none;
+	-moz-box-shadow: 2px 2px 2px #101010;
+  	-webkit-box-shadow: 2px 2px 2px #101010;
+ 	box-shadow: 2px 2px 2px #101010;	
+}
+
+.BaseArrowMessageArrow
+{
+	float: left;
+	width: 11px;
+	height: 20px;
+	padding: 8px 0px;
+	background-image: url(../images/message_arrow_left.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 100;
+}
+
+/* Search */
+.BaseSearchMain
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 705px;
+}
+.BaseSearchMainLeft
+{
+	float: left;
+	width: 350px;
+}
+.BaseSearchMainClear
+{
+	clear: both;
+}
+.BaseSearchMainButton
+{
+	display: block;
+	height: 60px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+.BaseSearchMainButton
+{
+	border: 0;
+	text-decoration: none;
+}
+.BaseSearchMainButton:hover
+{
+	background: #99b2cc;
+	text-decoration: none;
+	color: black;
+}
+a.BaseSearchMainButton:hover span span
+{
+	color: black;
+}
+.BaseSearchMainButtonImage
+{
+	display: block;
+	float: left;
+	margin: 4px;
+}
+.BaseSearchMainButtonText
+{
+	display: block;
+	padding: 4px;
+}
+.BaseSearchMainButtonTitle
+{
+	display: block;
+	font-weight: bold;
+}
+.BaseSearchMainButtonDescription
+{
+	display: block;
+	font-size: 11px;
+}
+.BaseSearchCommonSelect
+{
+	width: 100%;
+}
+.BaseSmallSearchContainer
+{
+	width: 100%;
+	border-bottom: 1px #C0C0C0 solid;
+}
+.BaseSmallSearchTable
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+.BaseSmallSearchInfo
+{
+	font-size: 10px;
+}
+
+/* Batch */
+#BaseBatchTestStartWindowContainer
+{
+	text-align: center;
+	padding: 20px 0;	
+}
+
+/* Errors */
+#ErrorFatalContainer
+{
+	width: 500px;	
+	margin: 50px auto 0 auto;
+}	
+#ErrorFatalSymbol
+{
+	float: left;
+	width: 55px;
+	margin: 10px 20px;
+}
+#ErrorFatalMessage
+{
+	font: normal 14px Arial, Helvetica, sans-serif;
+	padding: 25px 10px 0 10px;
+	text-align: left;
+}
+#ErrorFatalClear
+{
+	clear: both;
+}
+

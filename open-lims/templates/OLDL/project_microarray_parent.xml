@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OLDL PUBLIC "-//OLDL 0.4//EN" "http://doctype.open-lims.org/oldl.dtd" >
+<OLDL>
+	<HEAD>
+		<ID>19000</ID>
+		<TITLE>MicroArray - Parent Project</TITLE>
+		<DESC>Parent Project for different Microarray projects</DESC>
+		<VERSION>draft</VERSION>
+		<AUTHOR></AUTHOR>
+	</HEAD>
+	<REQUIRED>  
+  	</REQUIRED>
+	<BODY>
+		<STATUS id="100"></STATUS>
+	</BODY>
+</OLDL>

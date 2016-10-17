@@ -1,0 +1,23 @@
+#ManufacturerDialogSeach
+{
+	float: left;	
+}
+#ManufacturerDialogButton
+{
+	float: right;	
+}
+#ManufacturerDialogClear
+{
+	clear: both;
+}
+#ManufacturerDialogNewField
+{
+	font-size: 12px;
+	height: 12px;
+	width: 330px;	
+}
+.ManufacturerDialogNewFieldButton
+{
+	margin: 3px;	
+	border: 0;
+}

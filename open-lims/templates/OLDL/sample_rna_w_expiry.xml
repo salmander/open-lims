@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OLDL PUBLIC "-//OLDL 0.4//EN" "http://doctype.open-lims.org/oldl.dtd" >
+<OLDL type="sample">
+	<HEAD>
+		<ID>10001</ID>
+	 	<TITLE>RNA w. Date of Expiry</TITLE>
+		<DESC>RNA Template</DESC>
+		<VERSION>draft</VERSION>
+		<AUTHOR></AUTHOR>
+		<LOCATION requirement="optional" />
+		<MANUFACTURER requirement="optional" />
+		<EXPIRY />
+	</HEAD>
+	<BODY>
+		<ITEM type="equipment" occurrence="multiple" name="Add Used Hardware">
+			<CATEGORY id="1000" />
+		</ITEM>
+		<ITEM type="value" name="Add RNA Parameters">
+    		<TYPE id="10001"></TYPE>
+		</ITEM>   
+		<ITEM type="file" occurrence="multiple" requirement="optional" name="Add BioAnalyzer File"></ITEM>    
+	</BODY>
+</OLDL>

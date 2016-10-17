@@ -1,0 +1,84 @@
+/* Login */
+#LoginWrapper
+{
+	height: 331px;
+	width: 968px;
+	margin: 0 auto 10px auto;
+	background-image: url(../images/panorama.jpg);
+	background-repeat: repeat-x;
+	background-position: top center;
+}	
+#LoginContainer
+{
+	font: normal 12px Verdana, Helvetica, sans-serif;
+	color: white;
+	text-shadow: 1px 1px black;
+	border-left: 1px #D0D0D0 solid;
+	border-right: 1px #D0D0D0 solid;
+	width: 300px;
+	height: 281px;
+	margin-top: 0;
+	margin-left: 323px;;
+	padding: 50px 10px 0 10px;
+}
+#LoginTitle 
+{
+	text-align: center;
+}
+#LoginTable
+{
+	width: 300px;
+}
+#LoginTable tr td:first-child
+{
+	width: 90px;
+}
+#LoginFooter
+{
+	font: normal 9px Verdana, Helvetica, sans-serif;
+	text-align: center;
+}
+#LoginFooter a
+{
+	color: #444444;
+}
+.LoginElement
+{
+	margin: 20px;
+}
+.LoginElement label
+{
+	display:block;
+}
+.LoginTextfield
+{
+	width: 250px;
+	-moz-box-shadow: 2px 2px 2px #101010;
+  	-webkit-box-shadow: 2px 2px 2px #101010;
+ 	box-shadow: 2px 2px 2px #101010;
+}
+.LoginLanguageSelect
+{
+	width: 250px;
+	-moz-box-shadow: 2px 2px 2px #101010;
+  	-webkit-box-shadow: 2px 2px 2px #101010;
+ 	box-shadow: 2px 2px 2px #101010;
+}
+#BaseLoginPasswordForgot
+{
+	margin-top: 5px;
+	float: right;
+}
+#BaseLoginPasswordForgot:hover
+{
+	text-decoration: underline;
+	cursor: pointer; 
+}
+.BaseLoginForgotTextfield
+{
+	width: 270px;
+}
+.LoginErrorArrowMessage div
+{
+	color: red !important;
+}

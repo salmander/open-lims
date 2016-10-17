@@ -1,0 +1,234 @@
+.Form table
+{
+ 	border-spacing: 0;
+}
+.Form input,
+.Form textarea
+{
+	font: normal 14px Arial, Helvetica, sans-serif;
+	border-radius: 6px 6px 6px 6px;
+	border: 1px #D0D0D0 solid;
+	color: #2F2F2F;  
+	background-color: #EEEEEE;
+	padding: 4px;
+	margin: 3px 0;
+}
+.Form input.FormFocused,
+.Form textarea.FormFocused
+{
+	border: 1px #73A6FF solid;
+	color: black;  
+	background-color: #EFF5FF;
+}
+.Form select:radio
+{
+	
+}
+.Form select:checkbox
+{
+	
+}
+
+
+/* Select */
+div.FormFocused
+{
+	border: 1px #73A6FF solid;
+}
+.FormSelectList
+{
+	position: absolute;
+	border: 1px #D0D0D0 solid;
+	background-color: #EEEEEE;
+	color: #2F2F2F; 
+	text-shadow: none; 
+	margin: -3px 0 0 0;
+	padding: 0;
+	z-index: 100;
+}
+.FormSelectList ul
+{
+	list-style: none;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+.FormSelectList ul li
+{
+	margin: 0;
+	padding: 0;
+}
+.FormSelectList ul li a
+{
+	display: block;
+	padding: 3px 2px;
+	text-decoration: none;
+	color: #2F2F2F !important;
+}
+.FormSelectList ul li a:hover
+{
+	background-color: #73A6FF;
+	cursor: pointer;
+}
+.FormSelectList ul li.selected
+{
+	background-color: #73A6FF;
+	cursor: pointer;
+}
+.FormSelectList ul li span
+{
+	display: block;
+	padding: 3px 2px;
+	text-decoration: unterline;
+	font-weight: bold;
+	color: #2F2F2F !important;
+}
+.FormSelectContainer
+{
+	border-radius: 6px 6px 6px 6px;
+	border: 1px #D0D0D0 solid;
+	color: #2F2F2F;  
+	background-color: #EEEEEE;
+	/*padding: 0;
+	margin: 3px 0; */
+	padding: 0 4px;
+	margin: 3px 0;
+	position: relative;
+	height: 24px;
+}
+.FormSelectEntry
+{
+	padding: 4px;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-shadow: none; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+.FormSelectButton
+{
+	border-radius: 6px 6px 6px 6px;
+	margin: 1px;
+	float: right;
+	border: 1px #B0B0B0 solid;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #EEEEEE;
+	z-index: 10;
+}
+.FormSelectButton img
+{
+	margin: 8px 5px;
+}
+
+.Form input.FormError
+{
+	border: 1px #ff6347 solid;
+}
+
+.FormButtonBox
+{
+	padding-left: 10px;
+}
+.FormButtonBoxClear
+{
+	clear: left;
+	padding: 3px 0;
+}
+
+.FormBox
+{
+	margin: 20px 10px 5px 10px;
+	padding: 16px 10px 10px 10px;
+	border: 1px #D0D0D0 dotted;
+	clear: left;
+}
+.FormBoxWithoutLRPadding
+{
+	margin: 20px 10px 5px 10px;
+	padding: 16px 0 10px 0;
+	border: 1px #D0D0D0 dotted;
+	clear: left;
+}
+.FormBoxHeadline
+{
+	float: left;
+	margin: -25px 0 0 -2px;
+	padding: 0 2px;
+	font-weight: bold;
+	background: white;
+}
+.FormBoxHeadlineWithoutLRPadding
+{
+	float: left;
+	margin: -25px 0 0 8px;
+	padding: 0 2px;
+	font-weight: bold;
+	background: white;
+}
+.FormBoxClear
+{
+	clear: both;
+}
+.FormCenterBox70
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+
+/* !!! OUTDATED !!! */
+.FormButton
+{
+	background-color: white;
+	border: 1px #C0C0C0 solid;
+}
+
+.FormCheck
+{
+	background-color: white;
+}
+
+.FormTextarea
+{
+	background-color: white;
+	border: 1px #C0C0C0 solid;
+}
+
+.FormTextfield
+{
+	background-color: white;
+	border: 1px #C0C0C0 solid
+}
+
+.FormRadio
+{
+	background-color: white;
+}
+
+.FormSelect
+{
+	background-color: white;
+	border: 1px #C0C0C0 solid;
+	width: 100%;
+}
+.FormCheckbox
+{
+	
+}
+.FormDropDown
+{
+	
+}
+.FormError
+{
+	font: normal 0.8em Verdana, Helvatica, sans-serif;
+	color: red;
+}

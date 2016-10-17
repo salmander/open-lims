@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OLDL PUBLIC "-//OLDL 0.4//EN" "http://doctype.open-lims.org/oldl.dtd" >
+<OLDL>
+	<HEAD>
+		<ID>10002</ID>
+	 	<TITLE>MicroArray - Analysis with ArrayTools</TITLE>
+		<DESC>Template for MicroArray based projects with ArrayTools analysis</DESC>
+		<VERSION>draft</VERSION>
+		<AUTHOR>The Open-LIMS Project</AUTHOR>
+	</HEAD>
+	<REQUIRED>
+		<ITEM type="value">
+          <TYPE id="10000"></TYPE>
+    </ITEM>
+	</REQUIRED>
+	<BODY>
+		<STATUS id="10001">
+			<ITEM type="sample" occurrence="multiple" inherit="all">
+            	<TYPE id="10000"></TYPE>
+     		</ITEM>
+		</STATUS>
+		<STATUS id="10002">
+  			<ITEM type="sample" occurrence="multiple">
+         		<TYPE id="11000"></TYPE>
+    		</ITEM>		
+		</STATUS>
+		<STATUS id="10003">
+			<ITEM type="value">
+         		<TYPE id="10003"></TYPE>
+      		</ITEM>
+			<ITEM type="equipment" occurrence="multiple" name="Add Used Hardware">
+				<CATEGORY id="1000" />
+			</ITEM>
+		</STATUS>
+		<STATUS id="10004">
+			<ITEM type="equipment" occurrence="multiple" name="Add Hybridisation Hardware">
+				<CATEGORY id="1000" />
+			</ITEM>
+		</STATUS>
+		<STATUS id="10005">
+			<ITEM type="equipment" occurrence="multiple" name="Add Washing Hardware">
+				<CATEGORY id="1000" />
+			</ITEM>
+		</STATUS>
+		<STATUS id="10006">
+		  	<ITEMI parent_status="10002" parent_pos_id="0" pos_id="0"></ITEMI>
+			<ITEMI parent_status="10002" parent_pos_id="0" pos_id="2" takeover="true"></ITEMI>
+		</STATUS>
+		<STATUS id="10007">
+			<ITEMI parent_status="10002" parent_pos_id="0" pos_id="3" takeover="true"></ITEMI>
+		</STATUS>
+		<STATUS id="10008">
+			<ITEMI parent_status="10002" parent_pos_id="0" pos_id="1"></ITEMI>
+		</STATUS>
+		<STATUS id="10009">
+			<ITEM type="file" occurrence="multiple" name="Add ArrayTools Result"></ITEM>
+			<ITEM type="file" occurrence="multiple" name="Add R Images"></ITEM>
+		</STATUS>
+	</BODY>
+</OLDL>

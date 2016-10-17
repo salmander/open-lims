@@ -1,0 +1,398 @@
+/* Data Common */
+.DataTopSelect
+{
+	float: left;	
+}
+
+/* DATA BROWSER */
+.Deactivated:hover span
+{
+text-decoration:none;	
+}
+
+.Deactivated:hover
+{
+cursor:default;
+}
+
+.Deactivated
+{
+color:grey;
+}
+
+.DataBrowserMenuImage
+{
+vertical-align:middle;
+padding-bottom:1px;
+}
+
+#DataBrowserAddFileDialog
+{
+font-family:arial;
+font-size:12px;
+background-color:#ffffff;
+border: 1px #B7B7B7 solid;
+padding: 2px 6px 2px 6px;
+margin-top: -1px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:10px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+-webkit-border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:10px;
+}
+
+#DataBrowserAddFileDialog a
+{
+text-decoration:none;
+color:black;
+}
+
+#DataBrowserAddFileDialog a:hover
+{
+text-decoration:underline;
+}
+
+#DataBrowserAddFileDialog img
+{
+margin-right:5px;
+}
+
+#DataBrowserFileUploadContainer
+{
+text-align:left;
+}
+
+.DataBrowserFileHover
+{
+background-color:#c3c3c3;
+
+}
+.ListTable #DataBrowserAjax .DataBrowserFileHover td
+{
+cursor:pointer;
+}
+
+.DataBrowserFileSelected
+{
+background-color:#fcfcfc;
+}
+
+.ListTable #DataBrowserAjax .DataBrowserFileSelected td
+{
+cursor:default;
+}
+
+.ListTable #DataBrowserAjax tr td
+{
+/* padding: 0px 4px; */
+padding: 0;
+border-bottom:solid white 2px;
+border-top:solid white 2px;
+vertical-align:middle;
+cursor:default;
+}
+
+.ListTable #DataBrowserAjax .ListTableRowEven td
+{
+/* padding: 0px 4px; */
+	padding: 0;
+border-top:solid #e0e0e0 2px;
+border-bottom:solid #e0e0e0 2px;
+vertical-align:middle;
+}
+
+.ListTableRowEven .ListTableColumnFirstEntry
+{
+border-left:solid #e0e0e0 2px;
+}
+
+.ListTableRowEven .ListTableColumnLastEntry
+{
+border-right:solid #e0e0e0 2px;
+}
+
+#DataBrowserAjax tr:first-child
+{
+height:21px;
+}
+
+#DataBrowserFileDialog
+{
+font-family:arial;
+font-size:12px;
+background-color:#fcfcfc;
+border:solid #669acc 2px;
+border-top:none;
+padding: 0 2px 2px 2px;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:10px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+-webkit-border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:10px;
+}
+
+#DataBrowserFileDialog a
+{
+margin-left:5px;
+text-decoration:none;
+color:black;
+}
+
+#DataBrowserFileDialog a:hover
+{
+text-decoration:underline;
+}
+
+
+#DataBrowserAjaxActionSelect 
+{
+float: left;
+margin:2px 2px 0 2px;
+}
+
+#DataBrowserActionSelect
+{
+vertical-align:middle;
+}
+
+#DataBrowserAction
+{
+height:22px;
+width:30px;
+padding: 0;
+vertical-align:middle;
+}
+
+.DataBrowserDeleteCheckbox
+{
+margin-left: 0;	
+}
+
+#RenameFolderContainer
+{
+width:100%;
+text-align:center;
+}
+
+#RenameFolderContainer input
+{
+margin-top:5px;
+}
+
+/* DATA UPLOAD*/
+
+#UploadUI
+{
+font-family:arial;
+padding: 10px 10px 10px 10px;
+}
+
+#FileListContainer
+{
+margin-top: 10px;
+text-align:left;
+}
+
+#FileList
+{
+list-style-type:none;
+text-align:left;
+padding: 0 0 0 0;
+margin: 0 0 0 0;
+}
+
+#FileList li
+{
+padding: 1px 0 1px 0;
+height:18px;
+vertical-align: middle;
+}
+
+.FileListImage
+{
+height:16px;
+width:16px;
+margin-left:5px;
+padding-bottom:2px;
+vertical-align: middle;
+}
+
+.FileListProgressInfo
+{
+font-size:10px;
+margin-left:5px;
+vertical-align: middle;
+}
+
+.UploadProgressbar
+{
+margin: 10px 0 10px 0;	
+}
+
+#UploadInfo
+{
+margin-bottom:5px;	
+}
+
+
+/* FILE SEARCH MENU */
+
+#FileSearchList a
+{
+text-decoration: none;
+color: #444444;
+}
+
+#FileSearchList a:hover, 
+#FileSearchList a:focus,
+#FileSearchList a:visited,
+#FileSearchList a:active
+{
+text-decoration: underline;
+color: black;
+outline: none;
+}
+
+
+#FileSearchList ul li div
+{
+padding-top: 6px;
+padding-bottom: 4px;
+position:relative;
+border-bottom: dotted #C0C0C0 1px;
+}
+
+#FileSearchList ul li div table
+{
+width:100%;
+}
+
+/* VALUE */
+.DataValueFieldRequiredImportant
+{
+	border: 1px #FF6F63 dotted !important;
+}
+.DataValueFieldError
+{
+	border: 1px #FF6F63 dotted !important;
+}
+
+
+
+/* File Info */
+#BaseFileDetailLeft
+{
+	width: 340px;
+	float: left;
+	margin: 5px;
+}
+#BaseFileDetailRight
+{
+	float: right;
+	text-align: center;
+	width: 340px;
+	margin: 5px 10px;
+}
+#BaseFileDetailTable
+{
+	width: 100%;
+}
+#BaseFileDetailTable tr
+{
+	vertical-align: top;
+}
+#BaseFileDetailTable tr td
+{
+	padding: 2px;
+}
+#BaseFileDetailClear
+{
+	clear: both;
+}
+#BaseFileDetailAdminMenuTitle
+{
+	clear: left;
+	margin-top: 70px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+ul.BaseFileDetailAdminMenu
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.BaseFileDetailAdminMenu li
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+ul.BaseFileDetailAdminMenu li a
+{
+	display: block;
+	text-decoration: none;
+}
+.BaseFileDetailDownload
+{
+	display: block;
+	padding: 20px 5px 0px 5px;	
+	color: #444444 !important;
+	text-decoration: none;
+}
+.BaseFileDetailDownload:hover,
+.BaseFileDetailDownload:focus,
+.BaseFileDetailDownload:active
+{
+	text-decoration: underline;
+	color: #444444 !important;
+}
+.BaseFileDetailDownloadImage
+{
+	display: block;
+	float: left;
+	width: 55px;
+}
+.BaseFileDetailDownloadText
+{
+	float: left;
+	padding-top: 15px;
+	display: block;
+	font-size: 14px;
+}
+
+/* Permissions */
+#DataPermissionCHMODTable {
+	width: 80%;
+}
+
+#DataPermissionCHMODTable th {
+	text-align: left;
+}
+
+/* Parameter */
+.DataParameterTable
+{
+	border-collapse: collapse;
+}
+.DataParameterTable tbody tr.odd
+{
+	background-color: #EFEFEF;
+}
+.DataParameterTable tbody tr td:first-child,
+.DataParameterTable thead tr th:first-child
+{
+	padding-left: 10px;
+}
+.DataParameterTable tbody tr td:last-child,
+.DataParameterTable thead tr th:last-child
+{
+	padding-right: 10px;
+}
+
+.DataParameterMeasuringUnitSelect
+{
+	width: 140px;
+}

@@ -1,0 +1,366 @@
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.crossed {
+	text-decoration: line-through;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.center {
+	text-align: center;
+}
+
+
+.horizontal_line {
+	margin: 0;
+	padding: 0;
+	height: 1px;
+	border-bottom: 1px #C0C0C0 dotted;
+	font-size: 10px;
+	clear: both;
+}
+
+
+.OverviewTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.OverviewTable th {
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px #C0C0C0 dotted;
+	color: black;
+}
+
+.OverviewTable th a {
+	text-decoration: none;
+	color: black !important;
+}
+
+.OverviewTable td {
+	padding: 4px 2px;
+}
+
+.OverviewTable tr {
+	vertical-align: top;
+}
+
+
+.OverviewTableLeft {
+	float: left;
+}
+
+.OverviewTableRight {
+	float: right;
+}
+
+.rightText {
+	text-align: right;
+	margin-right: 0.5em;
+}
+
+
+
+.red {
+	color: red;
+}
+
+.trLightGrey {
+	background-color: #E0E0E0;
+}
+
+.formTable {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+.formTable tr {
+	vertical-align: top;
+}
+
+.formError {
+	font: normal 0.8em Verdana, Helvatica, sans-serif;
+	color: red;
+}
+
+.clearbox {
+	clear: both;
+}
+
+#text {
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: justify;
+}
+
+/* Projects */
+.Project {
+	width: 100%;
+}
+
+.ProjectOptionsFontDeactivated {
+	color: #C0C0C0;
+}
+
+.FontDeactivated {
+	color: #C0C0C0;
+}
+
+.ProjectGeneralTable tr {
+	vertical-align: top;
+}
+
+.ProjectCreateIWantTo {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ProjectCreateIWantTo tr {
+	vertical-align: top;
+}
+
+.ProjectCreateIWantTo td {
+	padding-bottom: 1.5em;
+}
+
+/* Forms */
+
+.button_left {
+	float: left;
+}
+
+.button_right {
+	text-align: right;
+	float: right;
+}
+
+.next_button,.previous_button,.previous_button_disabled {
+	background-color: white;
+	border: 1px #C0C0C0 solid;
+	width: 70px;
+}
+
+.next_button:hover,.previous_button:hover {
+	background-color: #E0E0E0;
+}
+
+
+
+/* Text */
+.smallText {
+	font: normal 0.8em Verdana, Helvetica, sans-serif;
+	color: #A0A0A0;
+}
+
+.smallText a {
+	color: #A0A0A0;
+	text-decoration: underline;
+}
+
+.smallText a {
+	color: #A0A0A0;
+	text-decoration: underline;
+}
+
+.smallText a:hover,.smallText a:focus,.smallText a:active {
+	color: red;
+	text-decoration: underline;
+}
+
+.smallTextBlack {
+	font: normal 0.8em Verdana, Helvetica, sans-serif;
+}
+
+.horzontalLineGrey {
+	border-bottom: 1px #C0C0C0 solid;
+}
+
+
+/* Files */
+
+.file_upload_container {
+	width: 100%;
+	background-image: url(../images/backgrounds/wizard.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+.file_info_table tr {
+	vertical-align: top;
+}
+
+#file_update_container {
+	min-height: 15em;
+	width: 100%;
+	background-image: url(../images/backgrounds/upload.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+.file_update_table {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* Profile */
+.profileQuickLinks {
+	width: 65em;
+	text-align: justify;
+	font: normal 0.85em Verdana, Helvetica, sans-serif;
+}
+
+.profileQuickLinks  a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.profileQuickLinks tr {
+	vertical-align: top;
+}
+
+.profileQuickLinks td {
+	padding-bottom: 1em;
+}
+
+.profileText {
+	width: 14em;
+}
+
+.profileIcon {
+	width: 4em;
+	padding-right: 0.5em;
+	padding-left: 1em;
+	text-align: right;
+}
+
+.profileHeadline {
+	margin-top: 1em;
+	font-weight: bold;
+	border-bottom: 1px #C0C0C0 solid;
+}
+
+/* Admin */ /* Project Forms */
+.adminOrganUnitSolid {
+	border-bottom: 1px #C0C0C0 solid;
+	font-size: 2px;
+}
+
+.adminOrganUnitDotted {
+	border-bottom: 1px #C0C0C0 dotted;
+	font-size: 2px;
+}
+
+
+
+.ResultNextPageBar {
+	text-align: right;
+	margin-right: 1em;
+}
+
+.imagebrowser {
+	text-align: center;
+}
+
+.imagebrowserhead {
+	text-align: left;
+	width: 100%;
+}
+
+.imagebrowserfoot {
+	text-align: left;
+	width: 100%;
+}
+
+
+
+/* ------------------ */ /* Neu */ /* ------------------ */
+
+
+
+.ImageBrowserMultiTable
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.ImageBrowserMultiTable td
+{
+	border-bottom: 1px #D0D0D0 solid;
+	width: 180px;
+}
+.ImageBrowserMultiImage
+{
+	width: 170px;
+	height: 170px;
+	padding: 5px;
+	text-align: center;
+}
+.ImageBrowserMultiInfo
+{
+	font-size: 10px;
+}
+
+.Error
+{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.ErrorLeft
+{
+	float: left;
+	width: 80px;
+}
+.ErrorRight
+{
+	
+}
+.ErrorCode
+{
+	margin-bottom: 10px;
+}
+.ErrorMessage
+{
+	
+}
+.ErrorClear
+{
+	clear: left;
+}
+
+.AdminUserDetailTable
+{
+	width: 100%;
+}
+.AdminUserDetailTable tr
+{
+	vertical-align: top;
+}
+.AdminUserDetailTable td
+{
+	padding-top: 4px;
+}
+.AdminHomeBox
+{
+	width: 100%;
+	border-bottom: 1px #D0D0D0 solid;
+}
+
+.FormSelect
+{
+	width: 100%;
+}

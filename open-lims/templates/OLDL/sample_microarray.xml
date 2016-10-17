@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE OLDL PUBLIC "-//OLDL 0.4//EN" "http://doctype.open-lims.org/oldl.dtd" >
+<OLDL type="sample">
+	<HEAD>
+		<ID>11000</ID>
+	 	<TITLE>MicroArray</TITLE>
+		<DESC>Microarray Template</DESC>
+		<VERSION>draft</VERSION>
+		<AUTHOR></AUTHOR>
+	</HEAD>
+  	<REQUIRED>  
+     	<ITEM type="parentsample"></ITEM>            
+      	<ITEM type="parentsample"></ITEM>
+  	</REQUIRED>
+	<BODY>
+		<ITEM type="file" occurrence="multiple" name="Add TIF-Files"></ITEM>
+		<ITEM type="file" occurrence="multiple" name="Add Curated Files"></ITEM>
+		<ITEM type="equipment" occurrence="multiple" name="Add Used Scanning-HW">
+			<CATEGORY id="1000" />
+		</ITEM>
+		<ITEM type="equipment" occurrence="multiple" name="Add Used Scanning-SW">
+			<CATEGORY id="1001" />
+		</ITEM>
+	</BODY>
+</OLDL>
