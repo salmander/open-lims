@@ -3,7 +3,7 @@
  * @package install
  * @version 0.4.0.0
  * @author Roman Konertz <konertz@open-lims.org>
- * @copyright (c) 2008-2014 by Roman Konertz
+ * @copyright (c) 2008-2016 by Roman Konertz
  * @license GPLv3
  * 
  * This file is part of Open-LIMS
@@ -26,5 +26,4 @@
  */
 $hosts = array();
 $hosts[] = "127.0.0.1";
-$hosts[] = $_SERVER["REMOTE_ADDR"];
 ?>

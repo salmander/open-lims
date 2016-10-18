@@ -1,0 +1,43 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{	
+	$("#DataPermissionCancelButton").click(function(event)
+	{
+		event.preventDefault()
+		history.back();
+	});
+});
+/*]]>*/ 
+</script>
+
+<!-- CONTAINER BEGIN ("Change Owner: [[TITLE]]") -->
+
+<form action='index.php?[[PARAMS]]' method='post'>
+
+<div class='Form'>
+
+<div class='FormBox'>
+<div class='FormBoxHeadline'>Select User:</div>
+
+<select name='user' size='10' class='FormSelect' />
+
+<!-- FOREACH BEGIN ([[OPTION]]) -->
+
+<option value='[[OPTION:VALUE]]'>[[OPTION:CONTENT]]</option>
+
+<!-- FOREACH END -->
+
+</select>[[ERROR]]
+</div>
+
+<div class='FormButtonBox'>
+<button type='submit' id='DataPermissionSaveButton'>[[LANG:BaseGlobalButtonSave]]</button>
+<button type='submit' id='DataPermissionCancelButton'>[[LANG:BaseGlobalButtonCancel]]</button>
+<div class='FormButtonBoxClear'></div>
+</div>
+</div>
+
+</form>
+
+<!-- CONTAINER END () -->

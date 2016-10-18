@@ -1,0 +1,39 @@
+<div id='navigation'>
+
+<ul class='AdministrationNavigation'>
+
+<li><div class='AdminstrationNavigationTitle'>[[LANG:BaseAdministrationMenuTitleBase]]</div></li>
+	
+<li><a href='index.php?[[GENERAL_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[GENERAL_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseGeneral]]</a></li>
+		
+<li><a href='index.php?[[INCLUDE_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[INCLUDE_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseIncludes]]</a></li>
+<li><a href='index.php?[[MODULE_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[MODULE_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseModules]]</a></li>
+<li><a href='index.php?[[NAVIGATION_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[NAVIGATION_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseNavigation]]</a></li>
+
+<li><a href='index.php?[[REGISTRY_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[REGISTRY_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseRegistry]]</a></li>
+
+<li><a href='index.php?[[SERVICES_PARAMS]]'><img src='images/icons/administration.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[SERVICES_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseServices]]</a></li>
+
+<li><a href='index.php?[[SYSTEM_LOG_PARAMS]]'><img src='images/icons/system_log.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[SYSTEM_LOG_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseSystemLog]]</a></li>
+<li><a href='index.php?[[SYSTEM_MESSAGE_PARAMS]]'><img src='images/icons/system_message.png' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[SYSTEM_MESSAGE_PARAMS]]'>[[LANG:BaseAdministrationMenuBaseSystemMessages]]</a></li>
+
+<li><div class='AdminstrationNavigationTitle'>[[LANG:BaseAdministrationMenuTitleOrganisation]]</div></li>
+
+<!-- FOREACH BEGIN ([[ORGANISATION_ADMIN]]) -->
+		
+	<li><a href='index.php?[[ORGANISATION_ADMIN:PARAMS]]'><img src='images/icons/[[ORGANISATION_ADMIN:ICON]]' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[ORGANISATION_ADMIN:PARAMS]]'>[[ORGANISATION_ADMIN:TITLE]]</a></li>
+	
+<!-- FOREACH END -->
+		
+<li><div class='AdminstrationNavigationTitle'>[[LANG:BaseAdministrationMenuTitleModules]]</div></li>
+
+<!-- FOREACH BEGIN ([[MODULE_ADMIN]]) -->
+		
+	<li><a href='index.php?[[MODULE_ADMIN:PARAMS]]'><img src='images/icons/[[MODULE_ADMIN:ICON]]' alt='root' border='0' /></a>&nbsp;<a href='index.php?[[MODULE_ADMIN:PARAMS]]'>[[MODULE_ADMIN:TITLE]]</a></li>
+	
+<!-- FOREACH END -->		
+			
+
+</ul>
+
+</div>

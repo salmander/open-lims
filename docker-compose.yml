@@ -11,7 +11,10 @@ services:
          - DB_PASSWORD=password
         volumes:
             - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
-            - ./open-lims:/var/www/open-lims
+            - ./open-lims/www:/var/www/open-lims/www
+            - ./open-lims/filesystem:/var/www/open-lims/filesystem:rw
+            - ./open-lims/logs:/var/www/open-lims/logs:rw
+            - ./open-lims/templates:/var/www/open-lims/templates:rw
         links:
             - php-fpm
     php-fpm:
@@ -26,7 +29,10 @@ services:
          - "9000:9000"
         working_dir: /var/www/open-lims
         volumes:
-         - ./open-lims:/var/www/open-lims
+         - ./open-lims/www:/var/www/open-lims/www
+         - ./open-lims/filesystem:/var/www/open-lims/filesystem:rw
+         - ./open-lims/logs:/var/www/open-lims/logs:rw
+         - ./open-lims/templates:/var/www/open-lims/templates:rw
     db:
         image: postgres:latest
         environment:
@@ -37,3 +43,5 @@ services:
          - "5432:5432"
         volumes:
          - ./docker/db/postgresql-data-dir:/var/lib/postgresql/data/pgdata
+         - ./open-lims/open-lims.backup:/open-lims-src/db-backup/open-lims.backup
+         - ./open-lims/open-lims.sql:/open-lims-src/db-backup/open-lims.sql

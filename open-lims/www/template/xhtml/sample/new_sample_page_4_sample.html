@@ -1,0 +1,61 @@
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	function check_form()
+	{
+		return true;
+	}
+	$("#AssistantPrevious").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_previous_page();
+		}
+	});
+	$("#AssistantNext").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_next_page();
+		}
+	});
+});
+/*]]>*/
+</script>
+
+<br />
+	<table class='Form FormCenterBox70'>
+	<tr>
+		<td colspan='2'>Select Parent Samples<br /><br /></td>
+	</tr>
+	
+	<!-- FOREACH BEGIN ([[SAMPLE]]) -->
+	
+		<tr>
+			<td width='30%'>[[SAMPLE:ID]]. Sample</td>
+			<td>
+				<select name='sample-[[SAMPLE:ID]]' class='SampleCreateAssistantField'>
+				
+				<!-- FOREACH BEGIN ([[SAMPLE]]) -->
+				
+					<option value='[[SAMPLE:VALUE]]' [[SAMPLE:SELECTED]]>[[SAMPLE:CONTENT]]</option>
+				
+				<!-- FOREACH END -->				
+				
+				</select>
+			</td>
+		</tr>
+			
+	<!-- FOREACH END -->
+	
+	<tr>
+		<td colspan='2'>
+			<br />
+			<div class='button_left'><button id='AssistantPrevious' class='Button'>previous</button></div>
+			<div class='button_right'><button id='AssistantNext' class='Button'>next</button></div>
+		</td>
+	</tr>
+</table>
+<input type='hidden' name='sample_template_data_type' value='sample' class='SampleCreateAssistantField' />

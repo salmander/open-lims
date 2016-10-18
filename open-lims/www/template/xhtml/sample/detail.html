@@ -1,0 +1,160 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	reload_menu = function()
+	{
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=sample&run=get_sample_menu",
+			data: 'get_array=[[GET_ARRAY]]',
+			success: function(data)
+			{		
+				if (data)
+				{
+					if ($("#SampleDetailMenu").children().size() > 0)
+					{
+						$("#SampleDetailMenu").fadeOut("slow",function()
+						{
+							$("#SampleDetailMenu").html(data);
+							$("#SampleDetailMenu").fadeIn("slow");
+							base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=sample&run=delete", 'get_array=[[GET_ARRAY]]', "SampleDetailDeleteButton");
+						});
+					}
+					else
+					{
+						$("#SampleDetailMenu").hide().html(data).fadeIn("slow");
+						base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=sample&run=delete", 'get_array=[[GET_ARRAY]]', "SampleDetailDeleteButton");
+					}
+
+					$("#SampleDeleteWindow").dialog({
+						autoOpen: false
+					});
+				}
+			}
+		});
+	}
+
+	function reload_information()
+	{
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=sample&run=get_sample_information",
+			data: 'get_array=[[GET_ARRAY]]',
+			async: false,
+			success: function(data)
+			{		
+				if (data)
+				{
+					$("#SampleDetailGeneralInformation").hide().html(data).fadeIn("slow");
+				}
+			}
+		});
+	}
+
+	reload_menu();
+	reload_information();
+
+	$(function() 
+	{
+		$( "#print_dialog" ).dialog(
+		{
+			autoOpen: false,
+			buttons: 
+			{
+				"Close": function() 
+				{
+					$( this ).dialog( "close" );
+				},
+				"OK": function()
+				{
+					var selected_value = $("input.selection:checked").attr("value");
+					
+					if (selected_value == "sample_barcode_report")
+					{
+						var paper_size = $("#report_barcode_paper_format option:selected").attr("value");
+						
+						var url = "report.php?username="+get_array["username"]+"&session_id="+get_array["session_id"]+"&dialog=sample_barcode_report&paper_size="+paper_size+"&sample_id="+get_array["sample_id"];
+					}
+					else
+					{
+						var url = "report.php?username="+get_array["username"]+"&session_id="+get_array["session_id"]+"&dialog=sample_full_report&sample_id="+get_array["sample_id"];
+					}
+					
+                    var windowName = $(this).attr("name");
+ 
+                    window.open(url, windowName);
+                    $( this ).dialog( "close" );
+				}
+			}
+		});
+
+		$('#report_barcode').attr('checked', true);
+		$('#report_barcode_paper_format').attr('disabled', false);
+		
+		$('#report_full').click(function()
+		{
+			$('#report_barcode_paper_format').attr('disabled', true);
+		});
+		
+		$('#report_barcode').click(function()
+		{
+			$('#report_barcode_paper_format').attr('disabled', false);
+		});
+		
+		$( "#print_dialog_opener" ).click(function()
+		{
+			$( "#print_dialog" ).dialog( "open" );
+			return false;
+		});
+	});
+});
+/*]]>*/
+</script>
+
+<div id="print_dialog" title="Print Report" style='display: none;'>
+	<div style='text-align: center; font-weight: bold;'>Create Report.</div>
+	<p><input type='radio' name='selection' class='selection' value='sample_barcode_report' id='report_barcode' /> Barcode only</p>
+	<p>Paper Format: <select id='report_barcode_paper_format'>
+	
+	<!-- FOREACH BEGIN ([[PAPER_SIZE_ARRAY]]) -->
+	
+		<option value='[[PAPER_SIZE_ARRAY:ID]]'>[[PAPER_SIZE_ARRAY:NAME]]</option>
+	
+	<!-- FOREACH END -->
+	
+	</select></p>
+	<p><input type='radio' name='selection' class='selection' value='sample_full_report' id='report_full' /> Full Report</p>
+</div>
+
+
+<!-- CONTAINER BEGIN ("[[TITLE]]") -->
+
+<div id='SampleDetailLeft'>
+
+	<div class='SampleBarcode'>
+		<div class='SampleBarcodeTitle'>Barcode:</div>
+		<div class='SampleBarcodePrint'><a href='' id='print_dialog_opener'><img src='images/icons/print.png' alt='' style='border:0;'></a></div>
+		<div class='SampleBarcodeImage'>
+			<img src='core/images/barcode.php?type=Code128&#38;string=[[ID]]' alt='Barcode' />
+		</div>
+	</div>
+	
+	<div class='horizontal_line'></div>
+	
+	<div id='SampleDetailGeneralInformation'></div>
+
+</div>
+
+
+<div id='SampleDetailRight'>
+
+	<div id='SampleDetailMenu'></div>
+	
+</div>
+
+<div id='SampleDetailClear'></div>
+
+<!-- CONTAINER END () -->

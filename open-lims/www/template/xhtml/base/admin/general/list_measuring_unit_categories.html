@@ -1,0 +1,128 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	$("#BaseAdminMeasuringUnitCategoryAddEditDialog").dialog(
+	{
+		autoOpen: false,
+		buttons: 
+		{
+			"Close": function()
+			{
+				$( this ).dialog( "close" );
+			},
+			"OK": function()
+			{
+				var name = $(".BaseAdminMeasuringUnitCategoryAddEditValue[name='name']").val();
+
+				$.ajax(
+				{
+					type: "POST",
+					url: "ajax.php?session_id="+get_array['session_id']+"&nav=base.admin&run=admin_general_add_measuring_unit_category",
+					data: "name="+name+"",
+					success: function(data)
+					{
+						if (data == "1")
+						{
+							list.reload();
+							$("#BaseAdminMeasuringUnitCategoryAddEditDialog").dialog( "close" );
+						}
+					}
+				});
+			}
+		},
+		height: 140,
+		width: 400
+	});
+	
+	$("#BaseAdminMeasuringUnitCategoryDeleteDialog").dialog(
+	{
+		autoOpen: false,
+		height: 150,
+		width: 350,
+		buttons: 
+		[{
+			text: "[[LANG:BaseGlobalButtonYes]]",
+			click: function()
+			{
+			 	var open_element = $.data(this, "open_element");
+			 	var id = $(open_element).attr("id").replace("BaseAdminMeasuringUnitCategoryDelete","");
+			 	var element = $(open_element);
+			 	
+			 	$.ajax(
+	 			{
+	 				type: "POST",
+	 				url: "ajax.php?session_id="+get_array['session_id']+"&nav=base.admin&run=admin_general_delete_measuring_unit_category",
+	 				data: "id="+id,
+	 				success: function(data)
+	 				{
+	 					if (data == 1)
+	 					{
+	 						$(element).parent().parent().fadeOut(400, function()
+	 						{
+	 							list.reload();
+	 						});
+	 					}
+	 					else
+	 					{
+	 						ErrorDialog("Error", "An error occured");
+	 					}
+	 				}
+	 			});
+			 	
+			 	$(this).dialog("close");
+			 	
+			}
+		},{
+			text: "[[LANG:BaseGlobalButtonNo]]",
+			click: function()
+			{
+			 	$(this).dialog("close");
+			}
+		}]
+	});	
+	
+	$('#BaseAdminMeasuringUnitCategoryAdd').click(function()
+	{
+		$("#BaseAdminMeasuringUnitCategoryAddEditDialog").dialog("open");
+		$("#BaseAdminMeasuringUnitCategoryAddEditDialog").dialog("option", "title", "Add a Measuring Unit Category");
+		$(".BaseAdminMeasuringUnitCategoryAddEditValue[name='name']").val("");
+	});
+
+	
+	$(".BaseAdminMeasuringUnitCategoryDelete").each().live('click', function()
+	{
+		$("#BaseAdminMeasuringUnitCategoryDeleteDialog").data('open_element', this).dialog("open");
+	});
+});
+/*]]>*/  
+</script>
+
+<div id='BaseAdminMeasuringUnitCategoryDeleteDialog' title='Delete Measuring Unit' style='display: none;'>
+Are you sure?
+</div>
+
+<div id="BaseAdminMeasuringUnitCategoryAddEditDialog" style='display: none;'>
+<div class='Form'>
+<table style='width: 100%'>
+	<tr>
+		<td style='width:100px;'>Name:</td>
+		<td><input class='BaseAdminMeasuringUnitCategoryAddEditValue' name='name' type='text' size='35' /></td>
+	</tr>
+</table>
+</div>
+</div>
+
+<!-- CONTAINER BEGIN ("Measuring Unit Categories") -->
+
+<div id='ListButtonBar'>
+	<a id='BaseAdminMeasuringUnitCategoryAdd' class='ListButton'>
+	<img src='images/icons/add.png' alt='' />
+	<div>Add a Measuring Unit Category</div>
+	</a>
+</div>
+<div id='ListButtonBarClear'></div>
+
+[[LIST]]
+
+<!-- CONTAINER END () -->

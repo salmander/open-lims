@@ -1,0 +1,72 @@
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	function check_form()
+	{
+		if (($(".SampleCreateAssistantField[name='sample_template'] option").is(":selected")) && ($(".SampleCreateAssistantField[name='sample_template'] option:selected").attr("value") != "0"))
+		{
+			return true;
+		}
+		else
+		{
+			$("#SampleCreateError1").html("<br />You have to select a template.");
+			return false;
+		}
+	}
+	$("#AssistantPrevious").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_previous_page();
+		}
+		else
+		{
+			assistant.save_data();
+		}
+	});
+	$("#AssistantNext").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_next_page();
+		}
+		else
+		{
+			assistant.save_data();
+		}
+	});
+});
+/*]]>*/
+</script>
+
+
+<br />
+<table class='Form FormCenterBox70'>
+	<tr>
+		<td><span class='bold'>Type of the Sample:</span></td>
+	</tr>
+	<tr>
+		<td>
+			<select name='sample_template' class='FormSelect SampleCreateAssistantField' size='10'>
+	
+			<!-- FOREACH BEGIN ([[OPTION]]) -->
+	
+				<option value='[[OPTION:VALUE]]' [[OPTION:SELECTED]] [[OPTION:DISABLED]]>[[OPTION:CONTENT]]</option>
+	
+			<!-- FOREACH END -->
+	
+			</select>
+			<span class='FormError' id='SampleCreateError1'></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br />
+			<div class='button_left'><button id='AssistantPrevious' class='Button'>previous</button></div>
+			<div class='button_right'><button id='AssistantNext' class='Button'>next</button></div>
+		</td>
+	</tr>
+</table>
+<br />

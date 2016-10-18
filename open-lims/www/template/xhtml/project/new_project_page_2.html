@@ -1,0 +1,123 @@
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	function check_form()
+	{
+		$("#ProjectCreateError1").html("");
+		$("#ProjectCreateError2").html("");
+		
+		if ($(".ProjectCreateAssistantField[name='project_name']").val())
+		{
+			if ($(".ProjectCreateAssistantField[name='project_description']").val())
+			{
+				var success;
+				
+				$.ajax(
+				{
+					type: "POST",
+					url: "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=create_project&action=check_data",
+					async: false,
+					data: "name="+$(".ProjectCreateAssistantField[name='project_name']").val(),
+					success: function(data)
+					{
+						if (data == '1')
+						{
+							$("#ProjectCreateError1").html("<br />[[LANG:ProjectCreatePage2ProjectAlreadyExistsError]]");
+							success = false;
+						}
+						else
+						{
+							success = true;
+						}
+					}
+				});
+				
+				return success;
+			}
+			else
+			{
+				$("#ProjectCreateError2").html("<br />[[LANG:ProjectCreatePage2EnterDescriptionError]]");
+				$.ajax(
+				{
+					type: "POST",
+					url: "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=create_project&action=check_data",
+					async: false,
+					data: "name="+$(".ProjectCreateAssistantField[name='project_name']").val(),
+					success: function(data)
+					{
+						if (data == '1')
+						{
+							$("#ProjectCreateError1").html("<br />[[LANG:ProjectCreatePage2ProjectAlreadyExistsError]]");
+						}
+					}
+				});
+				return false;
+			}
+			
+			
+		}
+		else
+		{
+			$("#ProjectCreateError1").html("<br />[[LANG:ProjectCreatePage2EnterNameError]]");
+			if (!$(".ProjectCreateAssistantField[name='project_description']").val())
+			{
+				$("#ProjectCreateError2").html("<br />[[LANG:ProjectCreatePage2EnterDescriptionError]].");
+			}
+			return false;
+		}
+	}
+	$("#AssistantPrevious").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_previous_page();
+		}
+	});
+	$("#AssistantNext").click(function()
+	{
+		if (check_form() == true)
+		{
+			assistant.load_next_page();
+		}
+	});
+});
+/*]]>*/
+</script>
+
+<br />
+<table class='Form FormCenterBox70'>
+	<tr>
+		<td>[[LANG:ProjectCreatePage2ProjectName]]:</td>
+		<td>
+			<input name='project_name' value='[[PROJECT_NAME]]' type='text' size='30' class='FormTextfield ProjectCreateAssistantField' />
+			<span class='FormError' id='ProjectCreateError1'></span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan='2'><img src='images/icons/info.png' alt='info' /><span class='smallTextBlack'> [[LANG:ProjectCreatePage2ProjectNameSubTitle]]</span><br /><br /></td>
+	</tr>
+	<tr>
+		<td colspan='2'>[[LANG:ProjectCreatePage2ProjectDescription]]:</td>
+	</tr>
+	<tr>
+		<td colspan='2'>
+			<textarea name='project_description' cols='77' rows='15' class='FormTextarea ProjectCreateAssistantField'>[[PROJECT_DESCRIPTION]]</textarea>
+			<span class='FormError' id='ProjectCreateError2'></span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan='2'><div class='horizontal_line'>&nbsp;</div></td>
+	</tr>	
+	<tr>
+		<td colspan='2'>
+			<br />
+			<div class='button_left'><button id='AssistantPrevious' class='Button'>[[LANG:BaseGlobalButtonPrevious]]</button></div>
+			<div class='button_right'><button id='AssistantNext' class='Button'>[[LANG:BaseGlobalButtonNext]]</button></div>
+		</td>
+	</tr>
+</table>
+</form>
+<br />

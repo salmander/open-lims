@@ -1,0 +1,55 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	
+	$(".ManufacturerListDelete").each().live('click', function()
+	{
+		var id = $(this).attr("id");
+		id = id.replace("ManufacturerListDelete","");
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=manufacturer&run=delete",
+			data: "id="+id,
+			success: function(data)
+			{
+				if (data == 1)
+				{
+					list.reload();
+				}
+			}
+		});
+	});
+	
+	
+	$('#ManufactuerAdd').click(function()
+	{
+		$("#ManufacturerAddDialog").dialog("open");
+		$("#ManufacturerAddDialogField").val("");
+		return false;
+	});
+	
+	$("#ManufacturerAddDialog").bind( "dialogbeforeclose", function(event, ui) 
+	{
+		list.reload();
+	}); 
+});
+/*]]>*/
+</script>
+
+[[ADD_DIALOG]]
+
+<!-- CONTAINER BEGIN ("Manufacturers") -->
+
+<div id='ListButtonBar'>
+	<a id='ManufactuerAdd' class='ListButton'>
+	<img src='images/icons/add.png' alt='' />
+	<div>Add a Manufacturer</div>
+	</a>
+</div>
+<div id='ListButtonBarClear'></div>
+
+[[LIST]]
+
+<!-- CONTAINER END () -->

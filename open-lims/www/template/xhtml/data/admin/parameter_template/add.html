@@ -1,0 +1,215 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	var language_json = '{' +
+						'"close_button":"[[LANG:BaseGlobalButtonClose]]",' +
+						'"new_button":"[[LANG:BaseGlobalButtonNew]]",' +
+						'"cancel_button":"[[LANG:BaseGlobalButtonCancel]]",' +
+						'"yes_button":"[[LANG:BaseGlobalButtonYes]]",' +
+						'"no_button":"[[LANG:BaseGlobalButtonNo]]",' +
+						'"save_button":"[[LANG:BaseGlobalButtonSave]]"' +
+						'}';
+	
+	data_parameter = new DataParameter();
+	data_parameter.set_language_json(language_json);
+	data_parameter.init_admin("DataParameterAdminTemplateAfterElement", "[[SESSION_ID]]");
+	
+	// Cancel Template Admin
+	$("#DataParameterTemplateCancelButton").click(function()
+	{
+		history.back();
+	});
+	
+	// Save Template Admin
+	$("#DataParameterTemplateSaveButton").click(function()
+	{		
+		$("#DataParameterAdminTemplateError1").html("");
+		$("#DataParameterAdminTemplateError2").html("");
+		
+		var abort = false;
+		
+		if ($("input[name='name']").val() === "")
+		{
+			$("#DataParameterAdminTemplateError1").html("You must enter a Name!");
+			abort = true;
+		}
+		else
+		{
+			var name = $("input[name='name']").val();
+		}
+		
+		if ($("input[name='internal_name']").val() === "")
+		{
+			$("#DataParameterAdminTemplateError2").html("You must enter an Internal-Name!");
+			abort = true;
+		}
+		else
+		{
+			var internal_name = $("input[name='internal_name']").val();
+			
+			$.ajax(
+			{
+				type : "POST",
+				url : "ajax.php?session_id=[[SESSION_ID]]&nav=data&run=admin_parameter_template_exist_internal_name",
+				data : "internal_name="+internal_name,
+				async : false,
+				success : function(data)
+				{
+					if (data !== "0")
+					{
+						$("#DataParameterAdminTemplateError2").html("This Internal-Name already exsits!");
+						abort = true;
+					}
+				}
+			});
+		}
+		
+		var json_field_object = data_parameter.get_field_json("DataParameterAdminValue");
+		var json_limit_object = data_parameter.get_limit_json("DataParameterAdminValue");
+		var field_error_array = data_parameter.get_field_error_array();
+		
+		$.each(field_error_array, function(index, value)
+		{
+			if (value === true)
+			{
+				$("#DataParameterTemplateFieldError"+index).html("<br />Please enter a Field-Name");
+				abort = true;
+			}
+			else
+			{
+				$("#DataParameterTemplateFieldError"+index).html("");
+			}
+		});
+		
+		if (abort === true)
+		{
+			return;
+		}
+		
+		$.ajax(
+		{
+			type : "POST",
+			url : "ajax.php?session_id=[[SESSION_ID]]&nav=data&run=admin_add_parameter_template",
+			data : "name="+name+"&internal_name="+internal_name+"&json_object_string="+json_field_object+"&json_limit_string="+json_limit_object,
+			beforeSend: function()
+			{
+				$("#DataParameterAdminTemplateAddFinish").dialog("open");
+			},
+			success : function(data)
+			{
+				if (data == "1")
+				{
+					window.setTimeout('window.location = \'[[RETRACE]]\'',500);
+				}
+				else
+				{
+					if ((data + '').indexOf("EXCEPTION",0) === 0)
+					{
+						var exception_message = data.replace("EXCEPTION: ","");
+						$("#DataParameterAdminTemplateAddFinish").dialog("close");
+						ErrorDialog("Error", exception_message);
+						return false;
+					}
+					else
+					{
+						$("#DataParameterAdminTemplateAddFinish").dialog("close");
+						ErrorDialog("Error", "An error occured");
+						return false;
+					}
+				}
+			}
+		});
+	});
+	
+});
+/*]]>*/  
+</script>
+
+<div class="BasePlaseWaitWindow" id="DataParameterAdminTemplateAddFinish" title=""> 
+<div><img src='images/animations/loading_circle_small.gif' alt=''> [[LANG:BaseGlobalMessageWait]]</div>
+</div> 
+
+<div id='DataParameterAdminTemplateAfterElement'></div>
+
+
+<!-- CONTAINER BEGIN ("[[LANG:DataAdminParameterTemplateAddHeadline]]") -->
+
+<div class='Form'>
+
+<div class='FormBox'>
+<div class='FormBoxHeadline'>[[LANG:DataAdminParameterTemplateAddHeadlineDetails]]</div>
+
+<table style='width: 80%'>
+	<tr>
+		<td>[[LANG:DataAdminParameterTemplateAddName]]:</td>
+		<td><input type='text' name='name' /></td>
+		<td>[[LANG:DataAdminParameterTemplateAddInternalName]]:</td>
+		<td><input type='text' name='internal_name' /></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td id='DataParameterAdminTemplateError1' class='FormError'></td>
+		<td></td>
+		<td id='DataParameterAdminTemplateError2' class='FormError'></td>
+	</tr>
+</table>
+
+</div>
+
+
+<div class='FormBoxWithoutLRPadding'>
+<div class='FormBoxHeadlineWithoutLRPadding'>[[LANG:DataAdminParameterTemplateAddHeadlineFields]]</div>
+
+<table style='width: 100%; text-align: left;' id='DataParameterTemplateTable' class='DataParameterTable'>
+	<thead>
+		<tr>
+			<th>[[LANG:DataAdminParameterTemplateAddName]]</th>
+			<th>[[LANG:DataAdminParameterTemplateAddUnit]]</th>
+			<th>[[LANG:DataAdminParameterTemplateAddLSL]]</th>
+			<th>[[LANG:DataAdminParameterTemplateAddUSL]]</th>
+			<th>[[LANG:DataAdminParameterTemplateAddMin]]</th>
+			<th>[[LANG:DataAdminParameterTemplateAddMax]]</th>
+			<th style='width: 20px;'></th>
+		<tr>
+	</thead>
+	<tbody>
+		<tr class='odd' id='DataParameterTemplateField1'>
+			<td><input type='text' name='name-1' class='DataParameterAdminValue' /><span id='DataParameterTemplateFieldError1' class='FormError'></span></td>
+			<td>
+				<select class='DataParameterMeasuringUnitSelect DataParameterAdminValue' name='unit-1'>
+				
+				<!-- FOREACH BEGIN ([[MEASURING_UNITS]]) -->
+	
+					<option value='[[MEASURING_UNITS:VALUE]]' [[MEASURING_UNITS:DISABLED]] [[MEASURING_UNITS:SELECTED]]>[[MEASURING_UNITS:CONTENT]]</option>
+		
+				<!-- FOREACH END -->
+				
+				</select>
+			</td>
+			<td><input type='text' size='6' name='lsl-1' class='DataParameterAdminValue' /></td>
+			<td><input type='text' size='6' name='usl-1' class='DataParameterAdminValue' /></td>
+			<td><input type='text' size='6' name='min-1' class='DataParameterAdminValue' /></td>
+			<td><input type='text' size='6' name='max-1' class='DataParameterAdminValue' /></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<br />
+
+<div style='padding: 0 10px;'>
+<button type='submit' id='DataParameterTemplateFieldNewButton'>[[LANG:DataAdminParameterTemplateAddButtonNewField]]</button>
+<button type='submit' id='DataParameterTemplateLimitButton'>[[LANG:DataAdminParameterTemplateAddButtonLimits]]</button>
+<div class='FormButtonBoxClear'></div>
+</div>
+</div>
+
+<div class='FormButtonBox'>
+<button type='submit' id='DataParameterTemplateSaveButton'>[[LANG:BaseGlobalButtonSave]]</button>
+<button type='submit' id='DataParameterTemplateCancelButton'>[[LANG:BaseGlobalButtonCancel]]</button>
+<div class='FormButtonBoxClear'></div>
+</div>
+</div>
+
+<!-- CONTAINER END () -->

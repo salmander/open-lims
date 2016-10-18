@@ -1,0 +1,78 @@
+<script type="text/javascript">
+/*<![CDATA[*/  
+$(document).ready(function()
+{
+	var get_array = getQueryParams(document.location.search);
+	
+	$("#UserSelectDialog").dialog(
+	{
+		autoOpen: false,
+		buttons: 
+		{
+			"Close": function()
+			{
+				$( this ).dialog( "close" );
+			},
+			"OK": function()
+			{
+				$("#UserSelectDialogOK").html("true");
+				$( this ).dialog( "close" );
+			}
+		},
+		height: 380,
+		width: 450
+	});
+	
+	$("#UserSelectDialog").bind( "dialogopen", function(event, ui) 
+	{
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=base&run=get_users_in_option",
+			data: "",
+			success: function(data)
+			{
+				if (data)
+				{
+					$("#UserSelectDialogSelect").html(data);
+				}
+			}
+		});
+		$("#UserSelectDialogOK").html("false");
+	});
+	
+	
+	$("#UserSelectDialogSearchField").keyup(function()
+	{
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=base&run=get_users_in_option",
+			data: "string="+$("#UserSelectDialogSearchField").val(),
+			success: function(data)
+			{
+				if (data)
+				{
+					$("#UserSelectDialogSelect").html(data);
+				}
+			}
+		});
+	});
+	
+});
+/*]]>*/
+</script>
+
+<div id="UserSelectDialog" title="Add User" style='display: none;'>
+	<div style='text-align: center; font-weight: bold;'>
+		<div id='UserSelectDialogSearch'>
+			<input type='text' id='UserSelectDialogSearchField' size='50' />
+		</div>
+		<div>
+			<select style='width: 400px;' size='12' id="UserSelectDialogSelect">
+			
+			</select>
+		</div>
+		<div style='display: none;' id='UserSelectDialogOK'></div>
+	</div>
+</div>

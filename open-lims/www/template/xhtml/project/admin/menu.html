@@ -1,0 +1,73 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	reload_admin_menu = function()
+	{
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=get_project_admin_menu",
+			data: 'get_array=[[GET_ARRAY]]',	
+			success: function(data)
+			{		
+				if (data)
+				{
+					if ($("#ProjectAdminMenuContent").children().size() > 0)
+					{
+						$("#ProjectAdminMenuContent").fadeOut("slow",function()
+						{
+							$("#ProjectAdminMenuContent").html(data);
+							$("#ProjectAdminMenuContent").fadeIn("slow");
+							base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=restore", 'get_array=[[GET_ARRAY]]', "ProjectRestoreButton");
+							base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=delete", 'get_array=[[GET_ARRAY]]', "ProjectDeleteButton");
+							base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=cancel", 'get_array=[[GET_ARRAY]]', "ProjectCancelButton");
+						});
+					}
+					else
+					{
+						$("#ProjectAdminMenuContent").html(data).hide().fadeIn("slow");
+						base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=restore", 'get_array=[[GET_ARRAY]]', "ProjectRestoreButton");
+						base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=delete", 'get_array=[[GET_ARRAY]]', "ProjectDeleteButton");
+						base_dialog("POST", "ajax.php?session_id="+get_array['session_id']+"&nav=project&run=cancel", 'get_array=[[GET_ARRAY]]', "ProjectCancelButton");
+					}
+
+					$("#ProjectRestoreWindow").dialog({
+						autoOpen: false
+					});
+			
+					$("#ProjectDeleteWindow").dialog({
+						autoOpen: false
+					});
+
+					$("#ProjectCancelWindow").dialog({
+						autoOpen: false
+					});
+
+				}
+			}
+		});
+	}
+
+	reload_admin_menu();
+});
+/*]]>*/
+</script>
+
+<div id="ProjectRestoreWindow" title="Delete Project" style='display: none;'>
+</div>
+
+<div id="ProjectDeleteWindow" title="Delete Project" style='display: none;'>
+</div>
+
+<div id="ProjectDeleteProceed" class="BaseBlockUIProceed" style="display:none; cursor: default">&nbsp;
+</div> 
+
+<div id="ProjectCancelWindow" title="Cancel Project" style='display: none;'>
+</div>
+		
+<!-- CONTAINER BEGIN (Project-Administration") -->
+	
+<div id='ProjectAdminMenu'><div id='ProjectAdminMenuContent'></div></div>
+
+<!-- CONTAINER END () -->

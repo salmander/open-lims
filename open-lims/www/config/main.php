@@ -24,13 +24,17 @@
 /**
  * 
  */
+date_default_timezone_set("Europe/London");
+ini_set('include_path', '/var/www/open-lims');
+
 $server['main_folder']							= "/var/www/open-lims";
 $server['timezone']								= "Europe/London";
 
 $database['type'] 								= "postgres";
-$database['database'] 							= $_ENV['DB_NAME'];
-$database['user'] 								= $_ENV['DB_USER'];
-$database['password']							= $_ENV['DB_PASSWORD'];
+$database['database'] 							= "web";
+$database['user'] 								= "web";
+$database['password']							= "password";
+
 
 // Primary Database Server
 $database[0]['server']							= "db";

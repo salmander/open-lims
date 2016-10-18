@@ -1,0 +1,75 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	$(".OrganisationUnitAdminListDelete").each().live('click', function()
+	{
+		var id = $(this).attr("id");
+		id = id.replace("OrganisationUnitAdminListDelete","");
+		$.ajax(
+		{
+			type: "POST",
+			url: "ajax.php?session_id="+get_array['session_id']+"&nav=organisation_unit&run=admin_delete_member",
+			data: "organisation_unit_id=[[ORGANISATION_UNIT_ID]]&user_id="+id,
+			success: function(data)
+			{
+				if (data == 1)
+				{
+					list.reload();
+				}
+			}
+		});
+	});
+	
+	$('#OrganisationUnitAdminUserAdd').click(function()
+	{
+		$("#UserSelectDialog").dialog("open");
+		$("#UserSelectDialogSearchField").val("");
+		return false;
+	});
+	
+	$("#UserSelectDialog").bind( "dialogbeforeclose", function(event, ui) 
+	{
+		if ($("#UserSelectDialogOK").html() == "true")
+		{
+			var user_id = $("#UserSelectDialogSelect option:selected").attr("id");
+			
+			if (user_id != undefined)
+			{
+				user_id = user_id.replace("User","");
+				
+				$.ajax(
+				{
+					type: "POST",
+					url: "ajax.php?session_id="+get_array['session_id']+"&nav=organisation_unit&run=admin_add_member",
+					data: "organisation_unit_id=[[ORGANISATION_UNIT_ID]]&user_id="+user_id,
+					success: function(data)
+					{
+						if (data == 1)
+						{
+							list.reload();
+						}
+					}
+				});
+			}
+		}
+	});	
+});
+/*]]>*/
+</script>
+
+[[ADD_DIALOG]]
+
+<!-- CONTAINER BEGIN ("Members [[TITLE]]") -->
+
+<div id='ListButtonBar'>
+	<a id='OrganisationUnitAdminUserAdd' class='ListButton'>
+	<img src='images/icons/add.png' alt='' />
+	<div>Add a Member</div>
+	</a>
+</div>
+<div id='ListButtonBarClear'></div>
+
+[[LIST]]
+
+<!-- CONTAINER END () -->

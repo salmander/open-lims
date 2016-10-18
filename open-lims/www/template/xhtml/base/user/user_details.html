@@ -1,0 +1,130 @@
+<!-- CONTAINER BEGIN ("[[LANG:BaseUserDetailTitle]]") -->
+		
+<br />
+<table class='formTable'>
+	<tr>
+		<td colspan='2'><div class='profileHeadline'>[[LANG:BaseUserDetailPersonalTitle]]:</div></td>
+	</tr>
+	<tr>
+		<td width='30%'>[[LANG:BaseUserDetailUsername]]:</td>
+		<td>[[USERNAME]]</td>
+	</tr>
+	
+	<!-- IF ([[GENDER]]) -->
+		
+	<tr>
+		<td>[[LANG:BaseUserDetailGender]]:</td>
+		<td>[[LANG:BaseUserDetailGenderMale]]</td>
+	</tr>
+	
+	<!-- ELSE -->
+	
+	<tr>
+		<td>[[LANG:BaseUserDetailGender]]:</td>
+		<td>[[LANG:BaseUserDetailGenderMale]]</td>
+	</tr>
+	
+	<!-- ENDIF -->
+			
+	<tr>
+		<td>[[LANG:BaseUserDetailFirstName]]:</td>
+		<td>[[FORENAME]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailLastName]]:</td>
+		<td>[[SURNAME]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailPTitle]]:</td>
+		<td>[[TITLE]]</td>
+	</tr>
+	<tr>
+		<td colspan='2'><div class='profileHeadline'>[[LANG:BaseUserDetailContactTitle]]:</div></td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailMail]]:</td>
+		<td>[[MAIL]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailInstitution]]:</td>
+		<td>[[INSTITUTION]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailDepartment]]:</td>
+		<td>[[DEPARTMENT]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailStreet]]:</td>
+		<td>[[STREET]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailZip]]:</td>
+		<td>[[ZIP]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailCity]]:</td>
+		<td>[[CITY]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailCountry]]:</td>
+		<td>[[COUNTRY]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailPhone]]:</td>
+		<td>[[PHONE]]</td>
+	</tr>
+	<tr>
+		<td colspan='2'><div class='profileHeadline'>[[LANG:BaseUserDetailInstantMessengerTitle]]:</div></td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailICQ]]:</td>
+		<td>[[ICQ]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailMSN]]:</td>
+		<td>[[MSN]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailYahoo]]:</td>
+		<td>[[YAHOO]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailAIM]]:</td>
+		<td>[[AIM]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailSkype]]:</td>
+		<td>[[SKYPE]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailLync]]:</td>
+		<td>[[LYNC]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:BaseUserDetailJabber]]:</td>
+		<td>[[Jabber]]</td>
+	</tr>
+	<tr>
+		<td colspan='2'><div class='profileHeadline'>[[LANG:BaseUserDetailGroups]]:</div></td>
+	</tr>
+	
+	<!-- FOREACH BEGIN ([[GROUP]]) -->
+			
+		<tr>
+			<td><a href='index.php?[[GROUP:PARAMS]]'>[[GROUP:NAME]]</a></td>
+		</tr>
+	
+	<!-- FOREACH END -->
+	
+	<!-- IF ([[NO_GROUP]]) -->
+	
+		<tr>
+			<td><span class='italic'>[[LANG:BaseUserDetailGroupsNotFound]]!</span></td>
+		</tr>
+	
+	<!-- ENDIF -->
+	
+</table>
+<br />
+				
+<!-- CONTAINER END () -->	

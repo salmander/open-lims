@@ -1,0 +1,154 @@
+<div id="SampleDeleteWindow" title="Delete Project" style='display: none;'>
+</div>
+
+<div id="SampleDeleteProceed" class="BaseBlockUIProceed" style="display:none; cursor: default">&nbsp;
+</div> 
+
+<!-- FOREACH BEGIN ([[ACTION]]) -->
+	
+	<!-- IF ([[ACTION:TYPE]] == ajax) -->
+
+		<script type="text/javascript">/*<![CDATA[*/[[ACTION:SCRIPT]]/*]]>*/</script>
+		<div id='[[ACTION:WINDOW_ID]]' title='[[ACTION:WINDOW_TITLE]]' style='display: none;'></div>
+		<a style='cursor: pointer;' class='BaseWantToButton' id='[[ACTION:CLICK_ID]]' title='[[STATUS_ACTION:NAME]]'>
+			<span class='BaseWantToIcon'>
+			
+			<!-- IF ([[ACTION:IMAGE]] == add_done) -->
+				<img src='images/icons_30/add_done.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension) -->	
+				<img src='images/icons_30/add_extension.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension_wait) -->	
+				<img src='images/icons_30/add_extension_wait.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension_done) -->	
+				<img src='images/icons_30/add_extension_done.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_done_sub_item_missing) -->	
+				<img src='images/icons_30/add_done_sub_item_missing.png' alt='' border='0' />
+			<!-- ELSE -->
+				<img src='images/icons_30/add.png' alt='' border='0' />	
+			<!-- ENDIF -->
+
+			</span>
+			<span class='BaseWantToText'>
+			
+			<!-- IF ([[ACTION:DEPENDS]]) -->
+				<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+			<!-- ENDIF -->
+			
+			[[ACTION:NAME]]
+			
+			</span>
+		</a>
+	
+	<!-- ELSEIF ([[ACTION:TYPE]] == link) -->
+	
+		<a href='index.php?[[ACTION:PARAMS]]' class='BaseWantToButton' title='[[STATUS_ACTION:NAME]]'>
+			<span class='BaseWantToIcon'>
+			
+			<!-- IF ([[ACTION:IMAGE]] == add_done) -->
+				<img src='images/icons_30/add_done.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension) -->	
+				<img src='images/icons_30/add_extension.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension_wait) -->	
+				<img src='images/icons_30/add_extension_wait.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension_done) -->	
+				<img src='images/icons_30/add_extension_done.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_done_sub_item_missing) -->	
+				<img src='images/icons_30/add_done_sub_item_missing.png' alt='' border='0' />
+			<!-- ELSE -->
+				<img src='images/icons_30/add.png' alt='' border='0' />	
+			<!-- ENDIF -->
+			
+			</span>
+			<span class='BaseWantToText'>
+			
+			<!-- IF ([[ACTION:DEPENDS]]) -->
+				<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+			<!-- ENDIF -->
+			
+			[[ACTION:NAME]]
+			</span>
+		</a>
+	
+	<!-- ELSEIF ([[ACTION:TYPE]] == line) -->
+	
+		<div class='BaseWantToLine'></div>
+	
+	<!-- ELSE -->
+		
+		<a class='BaseWantToButton' title='[[STATUS_ACTION:NAME]]'>
+			<span class='BaseWantToIcon'>
+			
+			<!-- IF ([[ACTION:IMAGE]] == add_extension_wait_na) -->
+				<img src='images/icons_30/add_extension_wait_na.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_extension_done_na) -->	
+				<img src='images/icons_30/add_extension_done_na.png' alt='' border='0' />
+			<!-- ELSEIF ([[ACTION:IMAGE]] == add_done_na) -->	
+				<img src='images/icons_30/add_done_na.png' alt='' border='0' />
+			<!-- ELSE -->	
+				<img src='images/icons_30/add_na.png' alt='' border='0' />
+			<!-- ENDIF -->
+			
+			</span>
+			<span class='BaseWantToText'>
+			
+			<!-- IF ([[ACTION:DEPENDS]]) -->
+				<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+			<!-- ENDIF -->
+			
+			[[ACTION:NAME]]
+			</span>
+		</a>
+		
+	<!-- ENDIF -->
+
+<!-- FOREACH END -->	
+
+
+<div class='horizontal_line'></div>
+
+<a href='index.php?[[MOVE_PARAMS]]' class='BaseWantToButton'>
+	<span class='BaseWantToIcon'><img src='images/icons_30/sample_move.png' alt='' border='0' /></span>
+	<span class='BaseWantToText'>move sample</span>
+</a>
+
+<a href='index.php?[[AVAILABILITY_PARAMS]]' class='BaseWantToButton'>
+	<span class='BaseWantToIcon'><img src='images/icons_30/sample_status.png' alt='' border='0' /></span>
+	<span class='BaseWantToText'>set [[NEW_STATUS]]</span>
+</a>
+
+<!-- IF ([[IS_OWNER]]) -->
+
+	<div class='horizontal_line'></div>
+
+	<a href='index.php?[[RENAME_PARAMS]]' class='BaseWantToButton'>
+		<span class='BaseWantToIcon'><img src='images/icons_30/sample_rename.png' alt='' border='0' /></span>
+		<span class='BaseWantToText'>rename sample</span>
+	</a>
+
+	<a href='index.php?[[USER_PERMISSIONS_PARAMS]]' class='BaseWantToButton'>
+		<span class='BaseWantToIcon'><img src='images/icons_30/users.png' alt='' border='0' /></span>
+		<span class='BaseWantToText'>set user permissions</span>
+	</a>
+	
+	<a href='index.php?[[OU_PERMISSIONS_PARAMS]]' class='BaseWantToButton'>
+		<span class='BaseWantToIcon'><img src='images/icons_30/organ_units.png' alt='' border='0' /></span>
+		<span class='BaseWantToText'>set organisation unit permissions</span>
+	</a>
+	
+<!-- ENDIF -->
+
+<!-- IF ([[IS_ADMIN]]) -->
+
+	<a href='#' class='BaseWantToButton' id='SampleDetailDeleteButton'>
+		<span class='BaseWantToIcon'><img src='images/icons_30/delete_sample.png' alt='' border='0' /></span>
+		<span class='BaseWantToText'>delete sample</span>
+	</a>
+
+<!-- ENDIF -->
+
+<div class='horizontal_line'></div>
+						
+<a href='index.php?[[ADD_SUBSAMPLE_PARAMS]]' class='BaseWantToButton'>
+	<span class='BaseWantToIcon'><img src='images/icons_30/add.png' alt='' border='0' /></span>
+	<span class='BaseWantToText'>add a sub-sample</span>
+</a>

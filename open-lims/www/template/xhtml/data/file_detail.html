@@ -1,0 +1,158 @@
+<!-- CONTAINER BEGIN ("[[LANG:DataFileDetailTitle]]: [[TITLE]]") -->
+
+<div id='BaseTopBar'>
+	<div id='BaseTopBarLeft'>
+
+		<a href='index.php?[[VERSION_LIST_LINK]]' class='ListButton' style='margin: 3px;'>
+		<img src='images/icons/history.png' alt='' />
+		<div>[[LANG:DataFileDetailTopHistory]]</div>
+		</a>
+	
+	</div>
+	<div id='BaseTopBarRight' class='Form'>
+		<form  action='index.php' method='get'>
+		<select name='version' class='DataTopSelect'>
+		<option value='[[VERSION]]'>[[LANG:DataFileDetailTopVersion]] [[VERSION]] - [[VERSION_DATETIME]]</option>
+		
+		<!-- FOREACH BEGIN ([[VERSION_OPTION]]) -->
+		
+		<option value='[[VERSION_OPTION:VERSION]]'>[[VERSION_OPTION:TEXT]]</option>
+		
+		<!-- FOREACH END -->
+		
+		</select>
+		<button type='submit' value='open' style='margin: 3px;'>[[LANG:BaseGlobalButtonOpen]]</button>
+		
+		<!-- FOREACH BEGIN ([[GET]]) -->		
+
+		<input type='hidden' value='[[GET:VALUE]]' name='[[GET:KEY]]' />
+
+		<!-- FOREACH END -->
+
+		</form>
+	</div>
+</div>
+<div id='BaseTopBarClear'></div>
+
+<div>
+
+<div id='BaseFileDetailLeft'>
+<table id='BaseFileDetailTable'>
+	<tr>
+		<td>[[LANG:DataFileDetailName]]:</td>
+		<td>[[NAME]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailPath]]:</td>
+		<td>[[PATH]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailSize]]:</td>
+		<td>[[SIZE]] ([[SIZE_IN_BYTE]] Byte)</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailDateTimeCreate]]:</td>
+		<td>[[CREATION_DATETIME]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailDateTimeVersion]]:</td>
+		<td>[[VERSION_DATETIME]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailMIMEType]]:</td>
+		<td>[[MIME_TYPE]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailOwner]]:</td>
+		<td>[[OWNER]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailMD5]]:</td>
+		<td>[[CHECKSUM]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailPermission]]:</td>
+		<td>[[PERMISSION]]</td>
+	</tr>
+	<tr>
+		<td>[[LANG:DataFileDetailComment]]:</td>
+		<td>[[COMMENT]]
+			<!-- IF ([[WRITE_ACCESS]]) -->
+		 		(<a href='index.php?[[COMMENT_CHANGE_LINK]]'>[[LANG:BaseGlobalButtonChange]]</a>)
+		 	<!-- ENDIF -->
+		</td>
+	</tr>
+</table>
+
+<div>
+<a href='download.php?[[DOWNLOAD_PARAMS]]' class='BaseFileDetailDownload'>
+	<span class='BaseFileDetailDownloadImage'>
+		<img src='images/icons_large/download_50.png' alt='' border='0' />
+	</span>
+	<span class='BaseFileDetailDownloadText'>[[LANG:DataFileDetailDownload]]</span>
+</a>
+</div>
+
+<div id='BaseFileDetailAdminMenuTitle'>[[LANG:DataFileDetailAdminTitle]]</div>
+	
+<ul class='BaseFileDetailAdminMenu'>
+	
+	<!-- IF ([[WRITE_ACCESS]]) -->
+
+	<li>
+		<a href='index.php?[[UPDATE_PARAMS]]'>
+			<span><img src='images/icons/upload.png' alt='' border='0' /></span>
+			<span>[[LANG:DataFileDetailAdminUploadUpdate]]</span>
+		</a>
+	</li>
+	<li>
+		<a href='index.php?[[UPDATE_MINOR_PARAMS]]'>
+			<span><img src='images/icons/upload.png' alt='' border='0' /></span>
+			<span>[[LANG:DataFileDetailAdminUploadMinorUpdate]]</span>
+		</a>
+	</li>
+	
+	<!-- ENDIF -->
+	
+	<!-- IF ([[CHANGE_PERMISSION]]) -->
+	
+	<li>
+		<a href='index.php?[[SET_PERMISSION_PARAMS]]'>
+			<span><img src='images/icons/permissions.png' alt='' border='0' /></span>
+			<span>[[LANG:DataFileDetailAdminSetPermission]]</span>
+		</a>
+	</li>
+	
+	<!-- ENDIF -->
+	
+	<!-- IF ([[DELETE_ACCESS]]) -->
+	
+	<li>
+		<a href='index.php?[[DELETE_FILE_PARAMS]]'>
+			<span><img src='images/icons/delete.png' alt='' border='0' /></span>
+			<span>[[LANG:DataFileDetailAdminDelete]]</span>
+		</a>
+	</li>
+	<li>
+		<a href='index.php?[[DELETE_FILE_VERSION_PARAMS]]'>
+			<span><img src='images/icons/delete.png' alt='' border='0' /></span>
+			<span>[[LANG:DataFileDetailAdminDeleteVersion]]</span>
+		</a>
+	</li>
+	
+	<!-- ENDIF -->
+	
+</ul>
+
+</div>
+
+<div id='BaseFileDetailRight'>
+			
+[[THUMBNAIL_IMAGE]]
+			
+</div>
+
+<div id='BaseFileDetailClear'></div>
+
+						
+<!-- CONTAINER END () -->

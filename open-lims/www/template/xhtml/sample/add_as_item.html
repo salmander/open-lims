@@ -1,0 +1,45 @@
+<!-- CONTAINER BEGIN ("Add Sample") -->
+
+<br />
+<br />
+<form action='index.php' method='get'>
+	
+	<!-- FOREACH BEGIN ([[GET_VALUE]]) -->
+	
+		<input type='hidden' name='[[GET_VALUE:NAME]]' value='[[GET_VALUE:VALUE]]' />
+	
+	<!-- FOREACH END -->	
+	
+	<div id='SampleAddAsItemContainer'>
+		<img src='images/icons_large/wizard_64.png' alt='' id='SampleAddAsItemContainerImage' />
+		<div id='SampleAddAsItemContainerMenu'>
+			<table width='100%'>
+				<tr>
+					<td></td>
+					<td><span class='bold'>I want to:</span></td>
+				</tr>
+				<tr>
+					<td><input type='radio' class='FormRadio' name='selectpage' value='1' checked="checked" /></td>
+					<td>add a new sample</td>
+				</tr>
+				<tr>
+					<td><input type='radio' class='FormRadio' name='selectpage' value='2' /></td>
+					<td>associate an existing sample</td>
+				</tr>
+				<tr>
+					<td><input type='radio' class='FormRadio' name='selectpage' value='3' /></td>
+					<td>clone and modify an existing sample</td>
+				</tr>
+			</table>
+		</div>
+		<div id='SampleAddAsItemContainerButtonArea'>
+			<br />
+			<br />
+			<br /><input type='submit' value='next' class='FormButton' /></div>
+		</div>
+		<input type='hidden' value='[[UNIQUE_ID]]' name='idk_unique_id' />
+</form>
+<br />
+<br />
+
+<!-- CONTAINER END () -->

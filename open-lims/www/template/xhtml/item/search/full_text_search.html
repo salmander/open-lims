@@ -1,0 +1,38 @@
+<!-- CONTAINER BEGIN ("[[LANG:ItemFullTextSearchTitle]]") -->
+
+<form action='index.php?[[PARAMS]]' method='post'>
+
+<div class='Form'>
+<div class='FormBox'>
+	<div class='FormBoxHeadline'>[[LANG:ItemFullTextSearchNameTitle]]</div>
+	<input type='text' name='string' size='47' class='FormTextfield' />
+	<span class='formError'>[[ERROR]]</span>
+	<br /><span class='smallTextBlack'>[[LANG:ItemFullTextSearchNameWildcard]]</span>
+</div>
+
+<div class='FormBoxClear'></div>
+
+<div class='FormBox'>
+	<div class='FormBoxHeadline'>[[LANG:ItemFullTextSearchTypeTitle]]</div>
+
+	
+	<!-- FOREACH BEGIN ([[ITEM_TYPE_ARRAY]]) -->
+	
+		<input type='checkbox' name='[[ITEM_TYPE_ARRAY:NAME]]' value='[[ITEM_TYPE_ARRAY:VALUE]]' [[ITEM_TYPE_ARRAY:CHECKED]]>&nbsp;[[ITEM_TYPE_ARRAY:TITLE]]</option><br />
+
+	<!-- FOREACH END -->
+		
+</div>
+	
+<div class='FormBoxClear'></div>	
+	
+<div class='FormButtonBox'>
+<button type='submit'>[[LANG:BaseGlobalButtonSearch]]</button>
+<div class='FormButtonBoxClear'></div>
+</div>
+
+</div>
+
+</form>
+			
+<!-- CONTAINER END () -->

@@ -1,0 +1,35 @@
+
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	$("#AssistantPrevious").click(function()
+	{
+		assistant.load_previous_page();
+	});
+	$("#AssistantNext").click(function()
+	{
+		assistant.load_next_page();
+	});
+});
+/*]]>*/
+</script>
+
+<br />
+	<div class='Form' style='width: 75%; margin: 0 auto;'>
+	<div class='FormBox'>
+	[[CONTENT]]
+	<div class='FormBoxClear'></div>
+	</div>
+	</div>
+	<table class='formTable'>
+	<tr>
+		<td>
+			<br />
+			<div class='button_left'><button id='AssistantPrevious' class='Button'>[[LANG:BaseGlobalButtonPrevious]]</button></div>
+			<div class='button_right'><button id='AssistantNext' class='Button'>[[LANG:BaseGlobalButtonNext]]</button></div>
+		</td>
+	</tr>
+</table>
+<input type='hidden' name='project_template_data_type' value='value' class='ProjectCreateAssistantField' />
+<input type='hidden' name='project_template_data_type_id' value='[[PROJECT_TEMPLATE_DATA_TYPE_ID]]' class='ProjectCreateAssistantField' />

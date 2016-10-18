@@ -1,0 +1,29 @@
+<!-- CONTAINER BEGIN ("System-Log") -->
+		
+
+<div id='ListButtonBar'>
+	<form  action='index.php' method='get'>
+	<select name='runid'>
+	
+	<!-- FOREACH BEGIN ([[OPTION]]) -->
+	
+		<option value='[[OPTION:VALUE]]' [[OPTION:SELECTED]]>[[OPTION:CONTENT]]</option>
+	
+	<!-- FOREACH END -->
+	
+	</select>
+	<input type='submit' value='open' class='FormButton' />
+	
+	<!-- FOREACH BEGIN (GET) -->		
+
+	<input type='hidden' value='[[GET:VALUE]]' name='[[GET:KEY]]' />
+
+	<!-- FOREACH END -->
+
+	</form>
+</div>
+<div id='ListButtonBarClear'></div>
+
+[[LIST]]
+
+<!-- CONTAINER END () -->

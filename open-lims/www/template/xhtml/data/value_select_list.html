@@ -1,0 +1,34 @@
+<!-- CONTAINER BEGIN ("Select Value") -->
+
+<form action='index.php?[[PARAMS]]' method='post'>
+
+<div class='Form'>
+
+<div class='FormBox'>
+<div class='FormBoxHeadline'>Templates</div>
+
+
+<select name='type_id' size='10' class='FormSelect'>
+
+<!-- FOREACH BEGIN ([[SELECT]]) -->
+
+	<option value='[[SELECT:VALUE]]'>[[SELECT:CONTENT]]</option>
+
+<!-- FOREACH END -->
+
+</select>
+
+</div>
+
+<div class='FormButtonBox'>
+<button type='submit' id='DataParameterSaveButton'>[[LANG:BaseGlobalButtonNext]]</button>
+<div class='FormButtonBoxClear'></div>
+</div>
+</div>
+
+<input type='hidden' value='[[DESCRIPTION]]' name='description' />
+<input type='hidden' value='[[KEYWORDS]]' name='keywords' />
+
+</form>
+
+<!-- CONTAINER END () -->

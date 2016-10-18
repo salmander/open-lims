@@ -1,0 +1,71 @@
+<script type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function()
+{
+	$("#ProjectDetailProceedCommentChechbox").click(function()
+	{
+		if ($("#ProjectDetailProceedCommentChechbox").is(":checkbox:checked"))
+		{
+			$("#ProjectDetailProceedCommentArea").html("<textarea id='ProjectDetailProceedCommentTextarea' name='reason' cols='65' rows='6' class='FormTextarea'></textarea>");
+		}
+		else
+		{
+			$("#ProjectDetailProceedCommentArea").html("");
+		}
+	});
+});
+/*]]>*/
+</script>
+
+<table class='ProdectDetailProceedTable'>
+	<tr>
+		<th>required action</th>
+		<th>status</th>
+	</tr>
+				
+	<!-- FOREACH BEGIN (STATUS_ACTION) -->
+	
+		<!-- IF ([[STATUS_ACTION:STATUS]] == line) -->	
+			<tr>
+				<td colspan='2'><div class='BaseWantToLine'></div></td>
+			</tr>
+		<!-- ELSEIF ([[STATUS_ACTION:STATUS]] == cancel) -->					
+			<tr>
+				<td>
+					<!-- IF ([[STATUS_ACTION:DEPENDS]]) -->
+						<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+					<!-- ENDIF -->
+					[[STATUS_ACTION:NAME]]
+				</td>
+				<td><img src='images/icons/status_cancel.png' alt='X' /></td>
+			</tr>
+		<!-- ELSEIF ([[STATUS_ACTION:STATUS]] == notice) -->
+			<tr>
+				<td>
+					<!-- IF ([[STATUS_ACTION:DEPENDS]]) -->
+						<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+					<!-- ENDIF -->
+					[[STATUS_ACTION:NAME]]
+				</td>
+				<td><img src='images/icons/notice.png' alt='X' /></td>
+			</tr>
+		<!-- ELSE -->
+			<tr>
+				<td>
+					<!-- IF ([[STATUS_ACTION:DEPENDS]]) -->
+						<img src='images/icons/depends.png' alt='' border='0' />&nbsp;
+					<!-- ENDIF -->
+					[[STATUS_ACTION:NAME]]
+				</td>
+				<td><img src='images/icons/status_ok.png' alt='V' /></td>
+			</tr>
+		<!-- ENDIF -->
+
+	<!-- FOREACH END -->
+										
+</table>
+
+<div id='ProjectDetailProceedComment'>
+	<input type='checkbox' id='ProjectDetailProceedCommentChechbox' />&nbsp;Add an optional comment
+	<div id='ProjectDetailProceedCommentArea'></div>	
+</div>

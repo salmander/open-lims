@@ -1,0 +1,32 @@
+<!-- CONTAINER BEGIN ("Image Browser") -->
+
+<div id='ListButtonBar'>
+
+	<a href='index.php?[[MULTI_PARAMS]]' class='ListButton'>
+	<img src='images/icons/image_browser_multi.png' alt='' />
+	<div>Multi View</div>
+	</a>
+	
+	<a href='index.php?[[DETAIL_PARAMS]]' class='ListButton'>
+	<img src='images/icons/image_browser_detail.png' alt='' />
+	<div>Detail View</div>
+	</a>
+	
+</div>
+<div id='ListButtonBarClear'></div>
+		
+<div class='imagebrowser'>
+
+<a href='image.php?[[IMAGE_CLICK_PARAMS]]'>
+<img src='image.php?[[IMAGE_PARAMS]]' alt='' border='0' />
+</a>
+	<div class='imagebrowserfoot'>
+	Filename: [[FILENAME]]
+	<br />Version: [[VERSION]]
+	<br />Datetime: [[DATETIME]]
+	</div>
+</div>
+
+[[PAGE_BAR]]
+			
+<!-- CONTAINER END () -->

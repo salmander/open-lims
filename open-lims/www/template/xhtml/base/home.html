@@ -1,0 +1,67 @@
+<div id='HomeWelcome'>[[LANG:BaseHomeWelcome]] [[USERNAME]]</div>
+<div id='HomeDate'>[[DATE]]</div>
+<br />
+<br />
+
+<!-- CONTAINER BEGIN ("[[LANG:BaseHomeSummary]]","","HomeSummary") -->
+
+<div id='HomeSummaryLeft'>
+	<table width='100%'>
+	<colgroup>
+	    <col width="20px" />
+	    <col width="40%" />
+	    <col />
+	</colgroup>
+	
+	<!-- FOREACH BEGIN ([[HOME_SUMMARY_LEFT_ARRAY]]) -->
+		
+	[[HOME_SUMMARY_LEFT_ARRAY:CONTENT]]	
+		
+	<!-- FOREACH END -->
+		
+	</table>
+</div>
+	
+<div id='HomeSummaryRight'>
+	<table width='100%'>
+	<colgroup>
+	    <col width="20px" />
+	    <col width="40%" />
+	    <col />
+	</colgroup>
+	
+	<!-- FOREACH BEGIN ([[HOME_SUMMARY_RIGHT_ARRAY]]) -->
+		
+	[[HOME_SUMMARY_RIGHT_ARRAY:CONTENT]]		
+		
+	<!-- FOREACH END -->
+		
+	</table>
+</div>
+
+<div id='HomeSummaryClear'></div>
+
+<!-- CONTAINER END (100) -->
+
+<br />
+
+<!-- CONTAINER BEGIN ("[[LANG:BaseHomeIWantTo]]","","HomeLeft") -->
+
+	<!-- FOREACH BEGIN ([[I_WANT_TO_ARRAY]]) -->
+	
+	[[I_WANT_TO_ARRAY:CONTENT]]
+	
+	<!-- FOREACH END -->
+			
+<a href='[[GET_HELP]]' class='BaseWantToButton'>
+	<span class='BaseWantToIcon'><img src='images/icons_30/help.png' alt='' border='0' /></span>
+	<span class='BaseWantToText'>[[LANG:BaseHomeIWantToGetHelp]]</span>
+</a>
+			
+<!-- CONTAINER END (49) -->
+
+<!-- CONTAINER BEGIN ("[[LANG:BaseHomeToday]]","","HomeRight") -->
+
+[[CONTENT]]
+	
+<!-- CONTAINER END (49) -->

@@ -1,0 +1,42 @@
+<!-- CONTAINER BEGIN ("[[LANG:BaseUserProfileTitle]]") -->
+
+<br />
+<table class='profileQuickLinks'>
+	<tr>
+		
+		<!-- IF ([[GENDER]]) -->	
+
+		<td class='profileIcon'><a href='index.php?[[PARAMS_CHANGE_PERSONAL]]'><img src='images/icons_large/profile_male_50.png' alt='' border='0' /></td>
+
+		<!-- ELSE -->
+	
+		<td class='profileIcon'><a href='index.php?[[PARAMS_CHANGE_PERSONAL]]'><img src='images/icons_large/profile_female_50.png' alt='' border='0' /></td>
+
+		<!-- ENDIF -->	
+		
+		
+		<td class='profileText'><a href='index.php?[[PARAMS_CHANGE_PERSONAL]]'>[[LANG:BaseUserProfilePersonalDataTitle]]</a><br />[[LANG:BaseUserProfilePersonalDataText]]</td>			
+		
+		
+		<td class='profileIcon'><a href='index.php?[[PARAMS_MY_SETTINGS]]'><img src='images/icons_large/mysettings_50.png' alt='' border='0' /></a></td>
+		<td class='profileText'><a href='index.php?[[PARAMS_MY_SETTINGS]]'>[[LANG:BaseUserProfileRegionalSettingsTitle]]</a><br />[[LANG:BaseUserProfileRegionalSettingsText]]</td>
+		
+
+		<!-- IF ([[CAN_CHANGE_PASSWORD]]) -->	
+				
+		<td class='profileIcon'><a href='index.php?[[PARAMS_CHANGE_PASSWORD]]'><img src='images/icons_large/mypassword_50.png' alt='' border='0' /></a></td>
+		<td class='profileText'><a href='index.php?[[PARAMS_CHANGE_PASSWORD]]'>[[LANG:BaseUserProfileChangePasswordTitle]]</a><br />[[LANG:BaseUserProfileChangePasswordText]]</td>
+		
+		<!-- ELSE -->
+		
+		<td class='profileIcon'><img src='images/icons_large/mypassword_50_d.png' alt='' border='0' /></td>
+		<td class='profileText'><span class='bold'>[[LANG:BaseUserProfileChangePasswordTitle]]</span><span class='ProjectOptionsFontDeactivated'><br />[[LANG:BaseUserProfileChangePasswordText]]</span></td>
+		
+		<!-- ENDIF -->		
+								
+	</tr>
+</table>
+<br />
+<br />
+				
+<!-- CONTAINER END () -->	
